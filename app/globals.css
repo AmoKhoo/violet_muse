@@ -1,0 +1,174 @@
+/* Violet theme — defined once, used everywhere (public site + all four panels).
+   The same tokens live in src/lib/theme.ts; change them in both places.
+   Palette: soft violet on warm cream, muted teal as the calm secondary.
+   Never harsh saturated purple, never dark-mode-only. */
+
+:root {
+  /* Primary — soft violet / lavender */
+  --violet: #8b7bc7;
+  --violet-accent: #a78bfa;
+  --violet-light: #ede9f7;
+  --violet-soft: #f4f1fa;
+  /* Deep plum — headings and primary text */
+  --plum: #4c3a7a;
+  --plum-dark: #372a5c;
+  /* Background — warm off-white / cream */
+  --bg: #fbf8f5;
+  --surface: #ffffff;
+  --card-tint: #f7f4fc;
+  /* Secondary — muted teal / sage (calm secondary accents, success) */
+  --teal: #6fa8a0;
+  --teal-dark: #4e7d76;
+  --teal-light: #e6f2ef;
+  /* Text + borders */
+  --text: #2e2a3a;
+  --text-muted: #6e6a7e;
+  --border: #e3def0;
+  --border-soft: #eeeaf7;
+  /* Status */
+  --success: #6fa8a0;
+  --warning: #c9a227;
+  --danger: #c26a6a;
+  --radius: 14px;
+  --shadow: 0 2px 12px rgba(76, 58, 122, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+  line-height: 1.6;
+}
+
+/* No external fonts, no external requests: system fonts only. */
+
+h1, h2, h3, h4 { color: var(--plum); line-height: 1.3; margin: 0 0 0.5rem; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+p { margin: 0 0 0.75rem; }
+a { color: var(--violet); text-decoration: none; }
+a:hover { text-decoration: underline; }
+small, .muted { color: var(--text-muted); }
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+/* Header / nav */
+.header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 10;
+}
+.header-inner {
+  max-width: 1080px; margin: 0 auto; padding: 12px 20px;
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.brand { font-size: 1.4rem; font-weight: 700; color: var(--plum); letter-spacing: 0.02em; }
+.brand span { color: var(--violet); }
+.nav { display: flex; gap: 4px; flex-wrap: wrap; margin-inline-start: auto; }
+.nav a {
+  color: var(--text); padding: 6px 12px; border-radius: 999px;
+}
+.nav a:hover { background: var(--violet-soft); text-decoration: none; }
+.nav a.active { background: var(--violet-light); color: var(--plum-dark); font-weight: 600; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--violet-soft), var(--teal-light));
+  border-bottom: 1px solid var(--border);
+  padding: 48px 0 40px;
+}
+.hero h1 { font-size: 2.2rem; }
+.hero p { color: var(--text-muted); font-size: 1.1rem; }
+
+/* Cards — soft violet-tinted */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+.card.tinted { background: var(--card-tint); }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.section { padding: 32px 0; }
+.section-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+
+/* Buttons */
+.btn {
+  display: inline-block; border: 1px solid transparent; cursor: pointer;
+  background: var(--violet); color: #fff; font: inherit; font-weight: 600;
+  padding: 9px 18px; border-radius: 999px;
+}
+.btn:hover { background: var(--plum); text-decoration: none; }
+.btn.secondary { background: var(--surface); color: var(--plum); border-color: var(--border); }
+.btn.secondary:hover { background: var(--violet-soft); }
+.btn.teal { background: var(--teal); }
+.btn.teal:hover { background: var(--teal-dark); }
+.btn.danger { background: var(--danger); }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* Badges, tags, prices */
+.badge {
+  display: inline-block; font-size: 0.8rem; font-weight: 600;
+  padding: 2px 10px; border-radius: 999px;
+  background: var(--violet-light); color: var(--plum);
+}
+.badge.teal { background: var(--teal-light); color: var(--teal-dark); }
+.price { font-weight: 700; color: var(--plum); font-size: 1.1rem; }
+
+/* Forms */
+input, select, textarea {
+  font: inherit; color: var(--text);
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 9px 12px; width: 100%;
+}
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--violet-accent); outline-offset: 1px; border-color: var(--violet);
+}
+label { display: block; font-weight: 600; color: var(--plum); margin: 12px 0 4px; }
+.field-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.field-row > * { flex: 1; min-width: 180px; }
+
+/* Tables (admin) */
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+th, td { text-align: start; padding: 8px 10px; border-bottom: 1px solid var(--border-soft); }
+th { color: var(--plum); background: var(--violet-soft); }
+tr:hover td { background: var(--card-tint); }
+
+/* Tabs (panels) */
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 16px 0; }
+.tabs button {
+  font: inherit; cursor: pointer; border: 1px solid var(--border);
+  background: var(--surface); color: var(--text);
+  padding: 7px 14px; border-radius: 999px;
+}
+.tabs button.active { background: var(--violet); color: #fff; border-color: var(--violet); }
+
+/* Notices */
+.notice {
+  border: 1px solid var(--border); border-inline-start: 4px solid var(--violet);
+  background: var(--violet-soft); border-radius: 10px; padding: 12px 16px; margin: 16px 0;
+}
+.notice.teal { border-inline-start-color: var(--teal); background: var(--teal-light); }
+.notice.warn { border-inline-start-color: var(--warning); background: #fdf6e3; }
+.error { color: var(--danger); font-weight: 600; }
+
+.footer {
+  border-top: 1px solid var(--border); margin-top: 48px; padding: 24px 0 32px;
+  color: var(--text-muted); font-size: 0.9rem; background: var(--surface);
+}
+
+/* Language switcher */
+.lang-switch { display: flex; gap: 4px; }
+.lang-switch button {
+  font: inherit; cursor: pointer; border: 1px solid var(--border);
+  background: var(--surface); padding: 4px 10px; border-radius: 999px;
+}
+.lang-switch button.active { background: var(--plum); color: #fff; border-color: var(--plum); }
+
+[dir="rtl"] .nav { margin-inline-start: auto; }

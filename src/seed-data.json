@@ -1,0 +1,394 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Platform Owner",
+      "email": "owner@platform.demo",
+      "role": "admin",
+      "password_hash": "scrypt:798eb06d8535c569c434e21629f67007:f9130b0ada49b41551d95f1e0370ffd436ccdd43f6c93bc6daffd1d7f4d1ccc5f56f3dcd8bad4bc7855c3fde73d2c71f53248a1c7b894ded61e662fe16f3fd4f",
+      "credit_cents": 0,
+      "created_at": "2026-11-11T15:03:07.158Z"
+    },
+    {
+      "id": 2,
+      "name": "Maya",
+      "email": "maya@demo.member",
+      "role": "member",
+      "password_hash": "scrypt:798eb06d8535c569c434e21629f67007:f9130b0ada49b41551d95f1e0370ffd436ccdd43f6c93bc6daffd1d7f4d1ccc5f56f3dcd8bad4bc7855c3fde73d2c71f53248a1c7b894ded61e662fe16f3fd4f",
+      "credit_cents": 0,
+      "created_at": "2026-11-11T15:03:07.158Z"
+    },
+    {
+      "id": 3,
+      "name": "Mr. Daniel (School Leader)",
+      "email": "leader@demo.school",
+      "role": "leader",
+      "password_hash": "scrypt:798eb06d8535c569c434e21629f67007:f9130b0ada49b41551d95f1e0370ffd436ccdd43f6c93bc6daffd1d7f4d1ccc5f56f3dcd8bad4bc7855c3fde73d2c71f53248a1c7b894ded61e662fe16f3fd4f",
+      "credit_cents": 0,
+      "created_at": "2026-11-11T15:03:07.158Z"
+    },
+    {
+      "id": 4,
+      "name": "Dr. Layla Haddad",
+      "email": "layla@demo.counselor",
+      "role": "counselor",
+      "password_hash": "scrypt:798eb06d8535c569c434e21629f67007:f9130b0ada49b41551d95f1e0370ffd436ccdd43f6c93bc6daffd1d7f4d1ccc5f56f3dcd8bad4bc7855c3fde73d2c71f53248a1c7b894ded61e662fe16f3fd4f",
+      "credit_cents": 0,
+      "created_at": "2026-11-11T15:03:07.158Z"
+    },
+    {
+      "id": 5,
+      "name": "Sara (student)",
+      "email": "sara@demo.student",
+      "role": "member",
+      "password_hash": "scrypt:798eb06d8535c569c434e21629f67007:f9130b0ada49b41551d95f1e0370ffd436ccdd43f6c93bc6daffd1d7f4d1ccc5f56f3dcd8bad4bc7855c3fde73d2c71f53248a1c7b894ded61e662fe16f3fd4f",
+      "credit_cents": 0,
+      "created_at": "2026-11-11T15:03:07.158Z"
+    },
+    {
+      "id": 6,
+      "name": "Karim (student)",
+      "email": "karim@demo.student",
+      "role": "member",
+      "password_hash": "scrypt:798eb06d8535c569c434e21629f67007:f9130b0ada49b41551d95f1e0370ffd436ccdd43f6c93bc6daffd1d7f4d1ccc5f56f3dcd8bad4bc7855c3fde73d2c71f53248a1c7b894ded61e662fe16f3fd4f",
+      "credit_cents": 0,
+      "created_at": "2026-11-11T15:03:07.158Z"
+    },
+    {
+      "id": 7,
+      "name": "Lina (student)",
+      "email": "lina@demo.student",
+      "role": "member",
+      "password_hash": "scrypt:798eb06d8535c569c434e21629f67007:f9130b0ada49b41551d95f1e0370ffd436ccdd43f6c93bc6daffd1d7f4d1ccc5f56f3dcd8bad4bc7855c3fde73d2c71f53248a1c7b894ded61e662fe16f3fd4f",
+      "credit_cents": 0,
+      "created_at": "2026-11-11T15:03:07.158Z"
+    }
+  ],
+  "plans": [
+    {
+      "id": 1,
+      "key": "bronze",
+      "name_en": "Bronze",
+      "name_fr": "Bronze",
+      "name_ar": "البرونزي",
+      "price_cents": 9900,
+      "sessions": 2,
+      "credit_cents": 2000,
+      "workshops": false,
+      "priority": false,
+      "org_seat": false
+    },
+    {
+      "id": 2,
+      "key": "silver",
+      "name_en": "Silver",
+      "name_fr": "Argent",
+      "name_ar": "الفضي",
+      "price_cents": 19900,
+      "sessions": 3,
+      "credit_cents": 6000,
+      "workshops": false,
+      "priority": false,
+      "org_seat": false
+    },
+    {
+      "id": 3,
+      "key": "gold",
+      "name_en": "Gold",
+      "name_fr": "Or",
+      "name_ar": "الذهبي",
+      "price_cents": 29900,
+      "sessions": 5,
+      "credit_cents": 10000,
+      "workshops": true,
+      "priority": false,
+      "org_seat": false
+    },
+    {
+      "id": 4,
+      "key": "diamond",
+      "name_en": "Diamond",
+      "name_fr": "Diamant",
+      "name_ar": "الماسي",
+      "price_cents": 59900,
+      "sessions": 8,
+      "credit_cents": 20000,
+      "workshops": true,
+      "priority": true,
+      "org_seat": true
+    }
+  ],
+  "tests": [
+    {
+      "id": 1,
+      "price_cents": 500,
+      "published": true,
+      "title": "{\"en\":\"Personality Discovery (MBTI-style)\",\"fr\":\"Découverte de la personnalité (type MBTI)\",\"ar\":\"اكتشاف الشخصية (على نمط MBTI)\"}",
+      "description": "{\"en\":\"Eight questions exploring how you draw energy, take in information, decide, and organize your life.\",\"fr\":\"Huit questions sur votre énergie, votre perception, vos décisions et votre organisation.\",\"ar\":\"ثمانية أسئلة تستكشف كيف تستمد طاقتك وتستقبل المعلومات وتتخذ قراراتك وتنظم حياتك.\"}",
+      "answer_key": "Four dimensions, one per question pair. Q1+Q5: first option = Extraversion (E), second = Introversion (I). Q2+Q6: first = Sensing (S), second = Intuition (N). Q3+Q7: first = Thinking (T), second = Feeling (F). Q4+Q8: first = Judging (J), second = Perceiving (P). Combine the four majority letters into a type code (e.g. ENFP). If a pair splits 1-1, name the lean and note it is close.",
+      "ai_prompt": "Write a warm, respectful personality report of 350-500 words. Open with the four-letter pattern and a one-line headline. Cover: how this person recharges, how they process and decide, strengths, blind spots, and two practical suggestions for work and relationships. Never present this as a medical or clinical diagnosis; close by saying it is a self-discovery snapshot, not a diagnosis.",
+      "questions": "[{\"text\":{\"en\":\"At a party, you usually…\",\"fr\":\"Lors d'une soirée, vous avez tendance à…\",\"ar\":\"في حفلة، عادةً ما…\"},\"options\":[{\"en\":\"Talk with many people, including strangers\",\"fr\":\"Parler à beaucoup de monde, y compris des inconnus\",\"ar\":\"تتحدث مع كثير من الناس، حتى الغرباء\"},{\"en\":\"Talk at length with a few people you know\",\"fr\":\"Discuter longuement avec quelques proches\",\"ar\":\"تتحدث مطولاً مع قلة ممن تعرفهم\"}]},{\"text\":{\"en\":\"You trust more…\",\"fr\":\"Vous faites davantage confiance à…\",\"ar\":\"تثق أكثر بـ…\"},\"options\":[{\"en\":\"Concrete facts and direct experience\",\"fr\":\"Les faits concrets et l'expérience directe\",\"ar\":\"الحقائق الملموسة والتجربة المباشرة\"},{\"en\":\"Patterns, ideas and possibilities\",\"fr\":\"Les schémas, les idées et les possibilités\",\"ar\":\"الأنماط والأفكار والاحتمالات\"}]},{\"text\":{\"en\":\"When deciding, you lead with…\",\"fr\":\"Pour décider, vous suivez d'abord…\",\"ar\":\"عند اتخاذ قرار، تتقدم بـ…\"},\"options\":[{\"en\":\"Logic and consistency\",\"fr\":\"La logique et la cohérence\",\"ar\":\"المنطق والاتساق\"},{\"en\":\"Values and the effect on people\",\"fr\":\"Les valeurs et l'effet sur les personnes\",\"ar\":\"القيم والأثر على الناس\"}]},{\"text\":{\"en\":\"Your ideal week is…\",\"fr\":\"Votre semaine idéale est…\",\"ar\":\"أسبوعك المثالي هو…\"},\"options\":[{\"en\":\"Planned ahead, with clear structure\",\"fr\":\"Planifiée à l'avance, bien structurée\",\"ar\":\"مخطط مسبقاً وبنية واضحة\"},{\"en\":\"Open, flexible, decided as you go\",\"fr\":\"Ouverte, flexible, décidée au fil des jours\",\"ar\":\"مفتوح ومرن ويُقرر يوماً بيوم\"}]},{\"text\":{\"en\":\"After a long social day you recharge by…\",\"fr\":\"Après une longue journée sociale, vous vous ressourcez en…\",\"ar\":\"بعد يوم اجتماعي طويل، تستعيد طاقتك بـ…\"},\"options\":[{\"en\":\"Going out and staying around people\",\"fr\":\"Sortant et restant entouré\",\"ar\":\"الخروج والبقاء بين الناس\"},{\"en\":\"Spending quiet time alone\",\"fr\":\"Passant un moment calme en solitaire\",\"ar\":\"قضاء وقت هادئ بمفردك\"}]},{\"text\":{\"en\":\"You prefer learning something…\",\"fr\":\"Vous préférez apprendre quelque chose de…\",\"ar\":\"تفضل تعلّم شيء…\"},\"options\":[{\"en\":\"Practical, step by step\",\"fr\":\"Pratique, étape par étape\",\"ar\":\"عملي، خطوة بخطوة\"},{\"en\":\"Abstract, the big picture first\",\"fr\":\"Abstrait, la vue d'ensemble d'abord\",\"ar\":\"مجرد، الصورة الكبيرة أولاً\"}]},{\"text\":{\"en\":\"In a conflict, your first instinct is to…\",\"fr\":\"En cas de conflit, votre premier réflexe est de…\",\"ar\":\"في خلاف، غريزتك الأولى هي…\"},\"options\":[{\"en\":\"Analyze what is fair and true\",\"fr\":\"Analyser ce qui est juste et vrai\",\"ar\":\"تحليل ما هو عادل وصادق\"},{\"en\":\"Restore harmony and understanding\",\"fr\":\"Restaurer l'harmonie et la compréhension\",\"ar\":\"استعادة الانسجام والتفاهم\"}]},{\"text\":{\"en\":\"Deadlines make you feel…\",\"fr\":\"Les délais vous font vous sentir…\",\"ar\":\"المواعيد النهائية تجعلك تشعر…\"},\"options\":[{\"en\":\"Calm — you finished well before\",\"fr\":\"Calme — vous avez fini bien avant\",\"ar\":\"بالهدوء — أنهيت قبلها بكثير\"},{\"en\":\"Energized — you do your best work near them\",\"fr\":\"Stimulé — vous travaillez mieux à l'approche\",\"ar\":\"بالنشاط — أفضل عملك يكون قربها\"}]}]"
+    },
+    {
+      "id": 2,
+      "price_cents": 0,
+      "published": true,
+      "title": "{\"en\":\"Emotional Intelligence\",\"fr\":\"Intelligence émotionnelle\",\"ar\":\"الذكاء العاطفي\"}",
+      "description": "{\"en\":\"Eight questions on self-awareness, self-regulation, empathy and social skill.\",\"fr\":\"Huit questions sur la conscience de soi, la régulation, l'empathie et les compétences sociales.\",\"ar\":\"ثمانية أسئلة حول الوعي بالذات وتنظيم المشاعر والتعاطف والمهارات الاجتماعية.\"}",
+      "answer_key": "Score each answer 1-4 (Strongly disagree=1 … Strongly agree=4). Dimensions: Self-awareness = Q1+Q6 (max 8). Self-regulation = Q2+Q4 (max 8). Empathy = Q3+Q5 (max 8). Social skill = Q7+Q8 (max 8). 7-8 = strength, 5-6 = developing, 3-4 = growth area, 2 = priority growth area.",
+      "ai_prompt": "Write a supportive emotional-intelligence report of 300-450 words. Give a one-line headline, then a short section per dimension (self-awareness, self-regulation, empathy, social skill) using the score bands in the key, then two concrete daily practices for the lowest dimensions. Respectful, non-clinical tone; state clearly this is not a diagnosis.",
+      "questions": "[{\"text\":{\"en\":\"I can name the emotion I am feeling while I feel it.\",\"fr\":\"Je peux nommer l'émotion que je ressens au moment où je la ressens.\",\"ar\":\"أستطيع تسمية الشعور الذي أحس به أثناء إحساسي به.\"},\"options\":[{\"en\":\"Strongly disagree\",\"fr\":\"Pas du tout d'accord\",\"ar\":\"لا أوافق بشدة\"},{\"en\":\"Disagree\",\"fr\":\"Pas d'accord\",\"ar\":\"لا أوافق\"},{\"en\":\"Agree\",\"fr\":\"D'accord\",\"ar\":\"أوافق\"},{\"en\":\"Strongly agree\",\"fr\":\"Tout à fait d'accord\",\"ar\":\"أوافق بشدة\"}]},{\"text\":{\"en\":\"When I am stressed, I pause before reacting.\",\"fr\":\"Quand je suis stressé, je fais une pause avant de réagir.\",\"ar\":\"عندما أكون متوتراً، أتوقف قبل أن أرد.\"},\"options\":[{\"en\":\"Strongly disagree\",\"fr\":\"Pas du tout d'accord\",\"ar\":\"لا أوافق بشدة\"},{\"en\":\"Disagree\",\"fr\":\"Pas d'accord\",\"ar\":\"لا أوافق\"},{\"en\":\"Agree\",\"fr\":\"D'accord\",\"ar\":\"أوافق\"},{\"en\":\"Strongly agree\",\"fr\":\"Tout à fait d'accord\",\"ar\":\"أوافق بشدة\"}]},{\"text\":{\"en\":\"I notice how others feel, even when they don't say it.\",\"fr\":\"Je remarque ce que ressentent les autres, même sans paroles.\",\"ar\":\"ألاحظ ما يشعر به الآخرون حتى لو لم يقولوه.\"},\"options\":[{\"en\":\"Strongly disagree\",\"fr\":\"Pas du tout d'accord\",\"ar\":\"لا أوافق بشدة\"},{\"en\":\"Disagree\",\"fr\":\"Pas d'accord\",\"ar\":\"لا أوافق\"},{\"en\":\"Agree\",\"fr\":\"D'accord\",\"ar\":\"أوافق\"},{\"en\":\"Strongly agree\",\"fr\":\"Tout à fait d'accord\",\"ar\":\"أوافق بشدة\"}]},{\"text\":{\"en\":\"I find it easy to calm myself after a setback.\",\"fr\":\"Je me calme facilement après un revers.\",\"ar\":\"يسهل عليّ تهدئة نفسي بعد نكسة.\"},\"options\":[{\"en\":\"Strongly disagree\",\"fr\":\"Pas du tout d'accord\",\"ar\":\"لا أوافق بشدة\"},{\"en\":\"Disagree\",\"fr\":\"Pas d'accord\",\"ar\":\"لا أوافق\"},{\"en\":\"Agree\",\"fr\":\"D'accord\",\"ar\":\"أوافق\"},{\"en\":\"Strongly agree\",\"fr\":\"Tout à fait d'accord\",\"ar\":\"أوافق بشدة\"}]},{\"text\":{\"en\":\"People feel heard when they talk to me.\",\"fr\":\"Les gens se sentent écoutés quand ils me parlent.\",\"ar\":\"يشعر الناس بأنني أصغي إليهم عندما يتحدثون معي.\"},\"options\":[{\"en\":\"Strongly disagree\",\"fr\":\"Pas du tout d'accord\",\"ar\":\"لا أوافق بشدة\"},{\"en\":\"Disagree\",\"fr\":\"Pas d'accord\",\"ar\":\"لا أوافق\"},{\"en\":\"Agree\",\"fr\":\"D'accord\",\"ar\":\"أوافق\"},{\"en\":\"Strongly agree\",\"fr\":\"Tout à fait d'accord\",\"ar\":\"أوافق بشدة\"}]},{\"text\":{\"en\":\"I understand how my mood affects my decisions.\",\"fr\":\"Je comprends comment mon humeur influence mes décisions.\",\"ar\":\"أفهم كيف يؤثر مزاجي على قراراتي.\"},\"options\":[{\"en\":\"Strongly disagree\",\"fr\":\"Pas du tout d'accord\",\"ar\":\"لا أوافق بشدة\"},{\"en\":\"Disagree\",\"fr\":\"Pas d'accord\",\"ar\":\"لا أوافق\"},{\"en\":\"Agree\",\"fr\":\"D'accord\",\"ar\":\"أوافق\"},{\"en\":\"Strongly agree\",\"fr\":\"Tout à fait d'accord\",\"ar\":\"أوافق بشدة\"}]},{\"text\":{\"en\":\"I can disagree with someone without damaging the relationship.\",\"fr\":\"Je peux exprimer un désaccord sans abîmer la relation.\",\"ar\":\"أستطيع الاختلاف مع شخص دون أن أفسد العلاقة.\"},\"options\":[{\"en\":\"Strongly disagree\",\"fr\":\"Pas du tout d'accord\",\"ar\":\"لا أوافق بشدة\"},{\"en\":\"Disagree\",\"fr\":\"Pas d'accord\",\"ar\":\"لا أوافق\"},{\"en\":\"Agree\",\"fr\":\"D'accord\",\"ar\":\"أوافق\"},{\"en\":\"Strongly agree\",\"fr\":\"Tout à fait d'accord\",\"ar\":\"أوافق بشدة\"}]},{\"text\":{\"en\":\"I ask for feedback about how I come across.\",\"fr\":\"Je demande des retours sur l'impression que je donne.\",\"ar\":\"أطلب ملاحظات حول الانطباع الذي أتركه.\"},\"options\":[{\"en\":\"Strongly disagree\",\"fr\":\"Pas du tout d'accord\",\"ar\":\"لا أوافق بشدة\"},{\"en\":\"Disagree\",\"fr\":\"Pas d'accord\",\"ar\":\"لا أوافق\"},{\"en\":\"Agree\",\"fr\":\"D'accord\",\"ar\":\"أوافق\"},{\"en\":\"Strongly agree\",\"fr\":\"Tout à fait d'accord\",\"ar\":\"أوافق بشدة\"}]}]"
+    },
+    {
+      "id": 3,
+      "price_cents": 200,
+      "published": true,
+      "title": "{\"en\":\"Anger & Stress Snapshot\",\"fr\":\"Instantané colère et stress\",\"ar\":\"لمحة عن الغضب والتوتر\"}",
+      "description": "{\"en\":\"Six questions about what triggers your anger and how it shows. A short AI report with first calming steps.\",\"fr\":\"Six questions sur ce qui déclenche votre colère et comment elle s'exprime. Un court rapport IA avec des premiers pas d'apaisement.\",\"ar\":\"ستة أسئلة حول ما يثير غضبك وكيف يظهر. تقرير قصير بالذكاء الاصطناعي مع خطوات أولى للتهدئة.\"}",
+      "answer_key": "Score Rarely=1, Sometimes=2, Often=3, Almost always=4. Q6 is reverse-scored (Rarely=4 … Almost always=1). Total 6-24. 6-10 = generally steady; 11-16 = anger flares in specific triggers; 17-24 = anger is significantly affecting daily life. Identify the two highest-scoring triggers by question topic.",
+      "ai_prompt": "Write a gentle anger-and-stress report of 300-400 words. One-line headline, the person's main triggers from the key, what their body signals suggest, and a 3-step calming plan (in the moment, same day, this week). Never shame the reader. Not a diagnosis; if the band is the highest, kindly suggest talking with a counselor.",
+      "questions": "[{\"text\":{\"en\":\"Small frustrations (traffic, queues) ruin my mood.\",\"fr\":\"Les petites contrariétés (trafic, files d'attente) gâchent mon humeur.\",\"ar\":\"الإحباطات الصغيرة (الازدحام، الطوابير) تفسد مزاجي.\"},\"options\":[{\"en\":\"Rarely\",\"fr\":\"Rarement\",\"ar\":\"نادراً\"},{\"en\":\"Sometimes\",\"fr\":\"Parfois\",\"ar\":\"أحياناً\"},{\"en\":\"Often\",\"fr\":\"Souvent\",\"ar\":\"غالباً\"},{\"en\":\"Almost always\",\"fr\":\"Presque toujours\",\"ar\":\"دائماً تقريباً\"}]},{\"text\":{\"en\":\"I raise my voice when I feel unheard.\",\"fr\":\"J'élève la voix quand je me sens ignoré.\",\"ar\":\"أرفع صوتي عندما أشعر أن لا أحد يسمعني.\"},\"options\":[{\"en\":\"Rarely\",\"fr\":\"Rarement\",\"ar\":\"نادراً\"},{\"en\":\"Sometimes\",\"fr\":\"Parfois\",\"ar\":\"أحياناً\"},{\"en\":\"Often\",\"fr\":\"Souvent\",\"ar\":\"غالباً\"},{\"en\":\"Almost always\",\"fr\":\"Presque toujours\",\"ar\":\"دائماً تقريباً\"}]},{\"text\":{\"en\":\"I replay arguments in my head for hours.\",\"fr\":\"Je ressasse les disputes pendant des heures.\",\"ar\":\"أعيد المشاجرات في ذهني لساعات.\"},\"options\":[{\"en\":\"Rarely\",\"fr\":\"Rarement\",\"ar\":\"نادراً\"},{\"en\":\"Sometimes\",\"fr\":\"Parfois\",\"ar\":\"أحياناً\"},{\"en\":\"Often\",\"fr\":\"Souvent\",\"ar\":\"غالباً\"},{\"en\":\"Almost always\",\"fr\":\"Presque toujours\",\"ar\":\"دائماً تقريباً\"}]},{\"text\":{\"en\":\"My body tenses (jaw, shoulders, fists) before I notice anger.\",\"fr\":\"Mon corps se tend (mâchoire, épaules, poings) avant même que je remarque la colère.\",\"ar\":\"يشد جسدي (الفك، الكتفان، القبضتان) قبل أن أنتبه للغضب.\"},\"options\":[{\"en\":\"Rarely\",\"fr\":\"Rarement\",\"ar\":\"نادراً\"},{\"en\":\"Sometimes\",\"fr\":\"Parfois\",\"ar\":\"أحياناً\"},{\"en\":\"Often\",\"fr\":\"Souvent\",\"ar\":\"غالباً\"},{\"en\":\"Almost always\",\"fr\":\"Presque toujours\",\"ar\":\"دائماً تقريباً\"}]},{\"text\":{\"en\":\"I say things in anger that I later regret.\",\"fr\":\"Je dis sous la colère des choses que je regrette ensuite.\",\"ar\":\"أقول في الغضب أشياء أندم عليها لاحقاً.\"},\"options\":[{\"en\":\"Rarely\",\"fr\":\"Rarement\",\"ar\":\"نادراً\"},{\"en\":\"Sometimes\",\"fr\":\"Parfois\",\"ar\":\"أحياناً\"},{\"en\":\"Often\",\"fr\":\"Souvent\",\"ar\":\"غالباً\"},{\"en\":\"Almost always\",\"fr\":\"Presque toujours\",\"ar\":\"دائماً تقريباً\"}]},{\"text\":{\"en\":\"I can step away and cool down before responding.\",\"fr\":\"Je peux m'éloigner et me calmer avant de répondre.\",\"ar\":\"أستطيع الابتعاد والهدوء قبل الرد.\"},\"options\":[{\"en\":\"Rarely\",\"fr\":\"Rarement\",\"ar\":\"نادراً\"},{\"en\":\"Sometimes\",\"fr\":\"Parfois\",\"ar\":\"أحياناً\"},{\"en\":\"Often\",\"fr\":\"Souvent\",\"ar\":\"غالباً\"},{\"en\":\"Almost always\",\"fr\":\"Presque toujours\",\"ar\":\"دائماً تقريباً\"}]}]"
+    },
+    {
+      "id": 4,
+      "price_cents": 0,
+      "published": true,
+      "title": "{\"en\":\"Anxiety Screening (CAC-style)\",\"fr\":\"Dépistage de l'anxiété (type CAC)\",\"ar\":\"فحص القلق (على نمط CAC)\"}",
+      "description": "{\"en\":\"Six questions about worry and tension over the last two weeks. A screening snapshot — not a diagnosis — with guidance on next steps.\",\"fr\":\"Six questions sur l'inquiétude et la tension des deux dernières semaines. Un instantané de dépistage — pas un diagnostic — avec des conseils pour la suite.\",\"ar\":\"ستة أسئلة حول القلق والتوتر في الأسبوعين الماضيين. لمحة فحص — وليست تشخيصاً — مع إرشاد للخطوات التالية.\"}",
+      "answer_key": "Score Rarely=0, Sometimes=1, Often=2, Almost always=3. Total 0-18. 0-4 = minimal signs; 5-9 = mild; 10-14 = moderate; 15-18 = pronounced. This is a screening snapshot only, never a diagnosis. For moderate and pronounced bands, warmly recommend booking a session with a licensed counselor on the platform.",
+      "ai_prompt": "Write a careful anxiety-screening summary of 300-400 words. One-line headline, what the pattern suggests per the band in the key, normalizing language (many people feel this), two grounding practices for this week, and — for the moderate and pronounced bands — a warm recommendation to book a counselor session. State explicitly: this screening is not a diagnosis.",
+      "questions": "[{\"text\":{\"en\":\"I felt nervous or on edge.\",\"fr\":\"Je me suis senti nerveux ou à bout.\",\"ar\":\"شعرت بالعصبية أو التوتر.\"},\"options\":[{\"en\":\"Rarely\",\"fr\":\"Rarement\",\"ar\":\"نادراً\"},{\"en\":\"Sometimes\",\"fr\":\"Parfois\",\"ar\":\"أحياناً\"},{\"en\":\"Often\",\"fr\":\"Souvent\",\"ar\":\"غالباً\"},{\"en\":\"Almost always\",\"fr\":\"Presque toujours\",\"ar\":\"دائماً تقريباً\"}]},{\"text\":{\"en\":\"I could not stop worrying about different things.\",\"fr\":\"Je n'arrivais pas à arrêter de m'inquiéter de tout.\",\"ar\":\"لم أستطع التوقف عن القلق بشأن أمور مختلفة.\"},\"options\":[{\"en\":\"Rarely\",\"fr\":\"Rarement\",\"ar\":\"نادراً\"},{\"en\":\"Sometimes\",\"fr\":\"Parfois\",\"ar\":\"أحياناً\"},{\"en\":\"Often\",\"fr\":\"Souvent\",\"ar\":\"غالباً\"},{\"en\":\"Almost always\",\"fr\":\"Presque toujours\",\"ar\":\"دائماً تقريباً\"}]},{\"text\":{\"en\":\"Worry interfered with my sleep.\",\"fr\":\"L'inquiétude a perturbé mon sommeil.\",\"ar\":\"أثّر القلق على نومي.\"},\"options\":[{\"en\":\"Rarely\",\"fr\":\"Rarement\",\"ar\":\"نادراً\"},{\"en\":\"Sometimes\",\"fr\":\"Parfois\",\"ar\":\"أحياناً\"},{\"en\":\"Often\",\"fr\":\"Souvent\",\"ar\":\"غالباً\"},{\"en\":\"Almost always\",\"fr\":\"Presque toujours\",\"ar\":\"دائماً تقريباً\"}]},{\"text\":{\"en\":\"I had trouble relaxing, even in free time.\",\"fr\":\"J'avais du mal à me détendre, même pendant mon temps libre.\",\"ar\":\"واجهت صعوبة في الاسترخاء حتى في وقت فراغي.\"},\"options\":[{\"en\":\"Rarely\",\"fr\":\"Rarement\",\"ar\":\"نادراً\"},{\"en\":\"Sometimes\",\"fr\":\"Parfois\",\"ar\":\"أحياناً\"},{\"en\":\"Often\",\"fr\":\"Souvent\",\"ar\":\"غالباً\"},{\"en\":\"Almost always\",\"fr\":\"Presque toujours\",\"ar\":\"دائماً تقريباً\"}]},{\"text\":{\"en\":\"I avoided situations because of fear or worry.\",\"fr\":\"J'ai évité des situations par peur ou inquiétude.\",\"ar\":\"تجنبت مواقف بسبب الخوف أو القلق.\"},\"options\":[{\"en\":\"Rarely\",\"fr\":\"Rarement\",\"ar\":\"نادراً\"},{\"en\":\"Sometimes\",\"fr\":\"Parfois\",\"ar\":\"أحياناً\"},{\"en\":\"Often\",\"fr\":\"Souvent\",\"ar\":\"غالباً\"},{\"en\":\"Almost always\",\"fr\":\"Presque toujours\",\"ar\":\"دائماً تقريباً\"}]},{\"text\":{\"en\":\"My heart raced or my breathing tightened without a clear reason.\",\"fr\":\"Mon cœur s'emballait ou ma respiration se serrait sans raison claire.\",\"ar\":\"تسارع قلبي أو ضاق نفسي دون سبب واضح.\"},\"options\":[{\"en\":\"Rarely\",\"fr\":\"Rarement\",\"ar\":\"نادراً\"},{\"en\":\"Sometimes\",\"fr\":\"Parfois\",\"ar\":\"أحياناً\"},{\"en\":\"Often\",\"fr\":\"Souvent\",\"ar\":\"غالباً\"},{\"en\":\"Almost always\",\"fr\":\"Presque toujours\",\"ar\":\"دائماً تقريباً\"}]}]"
+    }
+  ],
+  "content": [
+    {
+      "id": 1,
+      "kind": "audio",
+      "price_cents": 200,
+      "published": true,
+      "meta": "50 min · audio",
+      "title": "{\"en\":\"Anger Control — a 50-minute audio session\",\"fr\":\"Contrôler sa colère — une session audio de 50 minutes\",\"ar\":\"التحكم بالغضب — جلسة صوتية من ٥٠ دقيقة\"}",
+      "description": "{\"en\":\"A guided 50-minute audio session: understand your triggers, read your body's signals, and practice a step-by-step cool-down you can use anywhere.\",\"fr\":\"Une session audio guidée de 50 minutes : comprendre vos déclencheurs, lire les signaux de votre corps et pratiquer un retour au calme pas à pas.\",\"ar\":\"جلسة صوتية إرشادية من ٥٠ دقيقة: افهم محفزاتك، واقرأ إشارات جسدك، وتدرّب على تهدئة تدريجية تستعملها في أي مكان.\"}",
+      "body": "Session outline — 1) Why anger is information, not failure (8 min). 2) Mapping your personal triggers (10 min). 3) Body signals: jaw, shoulders, breath (9 min). 4) The 90-second pause practice (11 min). 5) Repairing after an outburst (7 min). 6) A daily 3-minute drill (5 min). SAMPLE OUTLINE — replace with the real audio file in public/media/anger-control.mp3 and set media_url."
+    },
+    {
+      "id": 2,
+      "kind": "book",
+      "price_cents": 500,
+      "published": true,
+      "meta": "96 pages · e-book",
+      "title": "{\"en\":\"Understanding Anxiety: a practical guide\",\"fr\":\"Comprendre l'anxiété : un guide pratique\",\"ar\":\"فهم القلق: دليل عملي\"}",
+      "description": "{\"en\":\"A short, plain-language book on how anxiety works in the body and mind, with worksheets you can fill in as you read.\",\"fr\":\"Un livre court et clair sur le fonctionnement de l'anxiété dans le corps et l'esprit, avec des exercices à remplir au fil de la lecture.\",\"ar\":\"كتاب قصير بلغة بسيطة حول كيفية عمل القلق في الجسد والعقل، مع أوراق عمل تملؤها أثناء القراءة.\"}",
+      "body": "Chapter 1 — The alarm system. Chapter 2 — The body first: breath, sleep, caffeine. Chapter 3 — Thoughts that feed the loop. Chapter 4 — Facing, gradually. Chapter 5 — When to get support. SAMPLE TEXT — replace with the real book file."
+    },
+    {
+      "id": 3,
+      "kind": "audio",
+      "price_cents": 0,
+      "published": true,
+      "meta": "25 min · audio",
+      "title": "{\"en\":\"Sleep Deeply — guided wind-down\",\"fr\":\"Dormir profondément — détente guidée\",\"ar\":\"نوم عميق — استرخاء موجّه\"}",
+      "description": "{\"en\":\"A free 25-minute guided audio to slow a racing mind before sleep.\",\"fr\":\"Un audio guidé gratuit de 25 minutes pour apaiser un esprit agité avant le coucher.\",\"ar\":\"صوت موجّه مجاني من ٢٥ دقيقة لتهدئة عقل مشغول قبل النوم.\"}",
+      "body": "A slow body-scan and breathing sequence designed for bedtime. Best with headphones, lights low, phone face-down. SAMPLE OUTLINE — replace with the real audio file."
+    },
+    {
+      "id": 4,
+      "kind": "video",
+      "price_cents": 1000,
+      "published": true,
+      "meta": "40 min · video",
+      "title": "{\"en\":\"Talking so your partner listens\",\"fr\":\"Parler pour que votre partenaire écoute\",\"ar\":\"تحدّث كي يسمعك شريكك\"}",
+      "description": "{\"en\":\"A 40-minute video lesson on soft start-ups, listening without defending, and repairing after hard conversations.\",\"fr\":\"Une leçon vidéo de 40 minutes : commencer en douceur, écouter sans se défendre, réparer après les conversations difficiles.\",\"ar\":\"درس فيديو من ٤٠ دقيقة حول البدء بلطف، والاستماع دون دفاع، والإصلاح بعد الأحاديث الصعبة.\"}",
+      "body": "Lesson flow — Why most arguments are about the first 3 minutes. The soft start-up formula. Listening to understand vs. listening to reply. The repair checklist. SAMPLE OUTLINE — replace with the real video file."
+    },
+    {
+      "id": 5,
+      "kind": "course",
+      "price_cents": 1000,
+      "published": true,
+      "meta": "5 parts · course",
+      "title": "{\"en\":\"Emotional Resilience — a 5-part course\",\"fr\":\"Résilience émotionnelle — un cours en 5 parties\",\"ar\":\"المرونة العاطفية — دورة من ٥ أجزاء\"}",
+      "description": "{\"en\":\"Five audio-video lessons building steadiness under pressure.\",\"fr\":\"Cinq leçons audio-vidéo pour tenir bon sous pression.\",\"ar\":\"خمسة دروس صوتية ومرئية لبناء الثبات تحت الضغط.\"}",
+      "body": "Part 1 — Know your weather. Part 2 — Regulation tools. Part 3 — Reframing setbacks. Part 4 — Leaning on people. Part 5 — Your resilience plan. SAMPLE OUTLINE — replace with real lesson files."
+    },
+    {
+      "id": 6,
+      "kind": "book",
+      "price_cents": 100,
+      "published": true,
+      "meta": "64 pages · e-book",
+      "title": "{\"en\":\"Notes on grief — a gentle companion\",\"fr\":\"Notes sur le deuil — un compagnon doux\",\"ar\":\"خواطر عن الحزن — رفيق لطيف\"}",
+      "description": "{\"en\":\"Short readings for the first year of loss.\",\"fr\":\"De courtes lectures pour la première année d'un deuil.\",\"ar\":\"قراءات قصيرة للسنة الأولى من الفقد.\"}",
+      "body": "Reading 1 — Grief is not a problem to solve. Reading 2 — The waves. Reading 3 — Sleep, appetite, and the body. Reading 4 — Anniversaries. Reading 5 — When grief needs company. SAMPLE TEXT — replace with the real book file."
+    }
+  ],
+  "counselors": [
+    {
+      "id": 1,
+      "user_id": 4,
+      "name": "Dr. Layla Haddad",
+      "specialty": "{\"en\":\"Anxiety & stress\",\"fr\":\"Anxiété et stress\",\"ar\":\"القلق والتوتر\"}",
+      "languages": "ar,fr,en",
+      "rating": 4.9,
+      "sessions_done": 1240,
+      "session_price_cents": 6500,
+      "status": "approved",
+      "photo": "",
+      "bio": "{\"en\":\"Clinical psychologist with 12 years of practice in Beirut and Paris. Works with anxiety, burnout and life transitions, in Arabic, French and English.\",\"fr\":\"Psychologue clinicienne, 12 ans de pratique à Beyrouth et Paris. Anxiété, épuisement et transitions de vie, en arabe, français et anglais.\",\"ar\":\"أخصائية نفسية إكلينيكية بخبرة ١٢ عاماً في بيروت وباريس. تعمل على القلق والإنهاك وتحولات الحياة، بالعربية والفرنسية والإنجليزية.\"}",
+      "pending_bio": null
+    },
+    {
+      "id": 2,
+      "user_id": null,
+      "name": "Dr. Marc Dubois",
+      "specialty": "{\"en\":\"Couples & relationships\",\"fr\":\"Couples et relations\",\"ar\":\"الأزواج والعلاقات\"}",
+      "languages": "fr,en",
+      "rating": 4.8,
+      "sessions_done": 860,
+      "session_price_cents": 6500,
+      "status": "approved",
+      "photo": "",
+      "bio": "{\"en\":\"Couples therapist trained in Lyon. Helps partners rebuild communication and trust.\",\"fr\":\"Thérapeute de couple formé à Lyon. Aide les partenaires à reconstruire communication et confiance.\",\"ar\":\"معالج أزواج تدرّب في ليون. يساعد الشريكين على إعادة بناء التواصل والثقة.\"}",
+      "pending_bio": null
+    },
+    {
+      "id": 3,
+      "user_id": null,
+      "name": "Dr. Sarah Klein",
+      "specialty": "{\"en\":\"Depression & mood\",\"fr\":\"Dépression et humeur\",\"ar\":\"الاكتئاب والمزاج\"}",
+      "languages": "en",
+      "rating": 4.9,
+      "sessions_done": 1510,
+      "session_price_cents": 6500,
+      "status": "approved",
+      "photo": "",
+      "bio": "{\"en\":\"Counseling psychologist focused on depression, low mood and self-esteem. Warm, structured, CBT-informed work.\",\"fr\":\"Psychologue spécialisée en dépression, baisse de moral et estime de soi.\",\"ar\":\"أخصائية إرشاد نفسي متخصصة في الاكتئاب وتدني المزاج وتقدير الذات.\"}",
+      "pending_bio": null
+    },
+    {
+      "id": 4,
+      "user_id": null,
+      "name": "Dr. Omar Nasser",
+      "specialty": "{\"en\":\"Teens & family\",\"fr\":\"Adolescents et famille\",\"ar\":\"المراهقون والأسرة\"}",
+      "languages": "ar,en",
+      "rating": 4.7,
+      "sessions_done": 640,
+      "session_price_cents": 6500,
+      "status": "approved",
+      "photo": "",
+      "bio": "{\"en\":\"Family therapist working with teenagers and parents.\",\"fr\":\"Thérapeute familial auprès des adolescents et des parents.\",\"ar\":\"معالج أسري يعمل مع المراهقين والأهل.\"}",
+      "pending_bio": null
+    },
+    {
+      "id": 5,
+      "user_id": null,
+      "name": "Dr. Claire Fontaine",
+      "specialty": "{\"en\":\"Trauma & grief\",\"fr\":\"Trauma et deuil\",\"ar\":\"الصدمة والحزن\"}",
+      "languages": "fr,en",
+      "rating": 5,
+      "sessions_done": 980,
+      "session_price_cents": 6500,
+      "status": "approved",
+      "photo": "",
+      "bio": "{\"en\":\"Psychotherapist specialized in trauma and grief support, EMDR-trained.\",\"fr\":\"Psychothérapeute spécialisée en trauma et accompagnement du deuil, formée à l'EMDR.\",\"ar\":\"معالجة نفسية متخصصة في الصدمة ومواكبة الحزن، مدرّبة على EMDR.\"}",
+      "pending_bio": null
+    },
+    {
+      "id": 6,
+      "user_id": null,
+      "name": "Dr. James Whitfield",
+      "specialty": "{\"en\":\"Work & burnout\",\"fr\":\"Travail et épuisement\",\"ar\":\"العمل والإنهاك المهني\"}",
+      "languages": "en",
+      "rating": 4.8,
+      "sessions_done": 720,
+      "session_price_cents": 6500,
+      "status": "approved",
+      "photo": "",
+      "bio": "{\"en\":\"Organizational psychologist coaching professionals through burnout and career change.\",\"fr\":\"Psychologue des organisations, il accompagne les professionnels.\",\"ar\":\"أخصائي نفسي تنظيمي يرافق المهنيين في الإنهاك وتغيير المسار.\"}",
+      "pending_bio": null
+    },
+    {
+      "id": 7,
+      "user_id": null,
+      "name": "Dr. Nadia Rahal",
+      "specialty": "{\"en\":\"Anger & emotional regulation\",\"fr\":\"Colère et régulation émotionnelle\",\"ar\":\"الغضب وتنظيم المشاعر\"}",
+      "languages": "ar,fr,en",
+      "rating": 4.9,
+      "sessions_done": 1090,
+      "session_price_cents": 6500,
+      "status": "approved",
+      "photo": "",
+      "bio": "{\"en\":\"Clinical psychologist helping adults understand anger and build regulation skills.\",\"fr\":\"Psychologue clinicienne aidant les adultes à comprendre leur colère.\",\"ar\":\"أخصائية نفسية إكلينيكية تساعد البالغين على فهم الغضب وبناء مهارات تنظيم.\"}",
+      "pending_bio": null
+    },
+    {
+      "id": 8,
+      "user_id": null,
+      "name": "Dr. Pierre Lambert",
+      "specialty": "{\"en\":\"Sleep & habits\",\"fr\":\"Sommeil et habitudes\",\"ar\":\"النوم والعادات\"}",
+      "languages": "fr,en",
+      "rating": 4.6,
+      "sessions_done": 430,
+      "session_price_cents": 6500,
+      "status": "approved",
+      "photo": "",
+      "bio": "{\"en\":\"Behavioral sleep specialist: insomnia, routines and habit change.\",\"fr\":\"Spécialiste comportemental du sommeil : insomnie, routines et changement d'habitudes.\",\"ar\":\"أخصائي سلوكي في النوم: الأرق والروتين وتغيير العادات.\"}",
+      "pending_bio": null
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "plan_id": 2,
+      "billing": "monthly",
+      "sessions_left": 2,
+      "sessions_expire_at": "2026-12-11T15:03:07.167Z",
+      "started_at": "2026-11-11T15:03:07.158Z"
+    }
+  ],
+  "credit_grants": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "amount_cents": 6000,
+      "remaining_cents": 6000,
+      "reason": "Silver plan credit",
+      "expires_at": "2027-01-10T15:03:07.167Z",
+      "created_at": "2026-11-11T15:03:07.158Z"
+    }
+  ],
+  "orders": [],
+  "library_items": [],
+  "test_results": [],
+  "bookings": [],
+  "messages": [],
+  "counselor_notes": [],
+  "counselor_applications": [],
+  "organizations": [
+    {
+      "id": 1,
+      "name": "Demo School — Grade 10",
+      "leader_id": 3,
+      "created_at": "2026-11-11T15:03:07.158Z"
+    }
+  ],
+  "org_members": [
+    {
+      "id": 1,
+      "org_id": 1,
+      "user_id": 5
+    },
+    {
+      "id": 2,
+      "org_id": 1,
+      "user_id": 6
+    },
+    {
+      "id": 3,
+      "org_id": 1,
+      "user_id": 7
+    }
+  ],
+  "assignments": []
+}
