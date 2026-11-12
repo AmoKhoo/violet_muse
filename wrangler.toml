@@ -4,7 +4,7 @@
 # The @cloudflare/next-on-pages adapter builds the Next.js app into the
 # .vercel/output directory that Pages serves, API routes included.
 # No static export: API routes keep working as Pages Functions.
-name = "violet"
+name = "violet-muse"
 
 compatibility_date = "2026-11-12"
 compatibility_flags = ["nodejs_compat"]
