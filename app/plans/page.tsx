@@ -30,6 +30,7 @@ export default function PlansPage() {
     <div className="grid">{(cat?.plans || []).map((p: any) => {
       const price = annual ? p.annual_price_cents : p.price_cents;
       return (<div className={`card plan-card${p.priority ? ' featured' : ''}`} key={p.id}>
+        {p.priority && <span className="plan-badge">{t(lang, 'mostPopular')}</span>}
         <div className="card-body"><h3>{p.name}</h3>
           <p><span className="price plan-price">${(price / 100).toFixed(0)}</span>{annual ? ' / year' : ' / month'}</p>
           {annual && <p className="muted">You save ${((p.price_cents * 12 * 0.15) / 100).toFixed(0)} vs monthly — 15% off the 12-month total, paid at once.</p>}

@@ -85,12 +85,9 @@ export default function Home() {
       </section>
 
       {/* PILLARS — the second glance: Tests, Counselors and Content together
-          in ONE interlocking triptych, not three boxes. A tall dark Tests
-          panel anchors the left; the Counselors card overlaps it top-right;
-          the Content card tucks in low-right, sliding under the Counselors
-          card. One idea — three ways to begin — each with real data and its
-          own CTA to its page. The old 4-step path band is retired: the three
-          pillars now carry the journey. */}
+          in ONE clean three-column grid. FIX 2026-11-12: the interlocking
+          triptych overlapped cards and clipped text, so the overlap is
+          gone — no card covers another, all share one baseline. */}
       <section className="section pillars-sec"><div className="container">
         {err && <div className="notice warn">{err} <button className="btn secondary" onClick={() => location.reload()}>{t(lang, 'retry')}</button></div>}
         {!cat && !err && <p>{t(lang, 'loading')}</p>}
@@ -99,7 +96,6 @@ export default function Home() {
           <p className="pillars-sub">{t(lang, 'pillarsSub')}</p>
           <div className="pillars">
             <article className="pillar pillar-tests">
-              <span className="pillar-num" aria-hidden="true">01</span>
               <TestMark title={cat.tests[0].title} />
               <h3>{t(lang, 'tests')}</h3>
               <p className="pillar-item">{cat.tests[0].title}</p>
@@ -108,16 +104,14 @@ export default function Home() {
               <Link href="/tests" className="btn">{t(lang, 'takeTest')}</Link>
             </article>
             <article className="card pillar pillar-counselors">
-              <span className="pillar-num" aria-hidden="true">02</span>
               <div className="counselor-top"><Avatar name={cat.counselors[0].name} />
                 <div><h3>{cat.counselors[0].name}</h3><p className="muted">{cat.counselors[0].specialty} · ★ {cat.counselors[0].rating} · {cat.counselors[0].sessions_done} sessions</p></div></div>
               <p>{cat.counselors[0].bio}</p>
               <Link href="/counselors" className="btn secondary">{t(lang, 'book')}</Link>
             </article>
             <article className="card media-card pillar pillar-content">
-              <span className="pillar-num" aria-hidden="true">03</span>
               <img className="pillar-content-media" src={coverFor(cat.content[0].kind)} alt="" loading="lazy" />
-              <div className="card-body"><span className="badge">{cat.content[0].kind}</span> <span className="muted">{cat.content[0].meta}</span>
+              <div className="card-body"><span className="card-tags"><span className="badge">{cat.content[0].kind}</span> <span className="muted">{cat.content[0].meta}</span></span>
                 <h3>{cat.content[0].title}</h3><p className="muted">{cat.content[0].description}</p>
                 <p><span className="price">{priceLabel(cat.content[0].price_cents)}</span></p>
                 <Link href="/content" className="btn secondary">{t(lang, 'browseContent')}</Link></div>
@@ -132,6 +126,7 @@ export default function Home() {
         <div className="ed-head"><span className="sec-index">02</span><h2>{t(lang, 'plans')}</h2><span className="sec-rule" aria-hidden="true" /><Link href="/plans" className="sec-more" aria-label={t(lang, 'plans')}>→</Link></div>
         <div className="plans-arc">{cat.plans.map((p: any) => (
           <div className={`card plan-card${p.priority ? ' featured' : ''}`} key={p.id}>
+            {p.priority && <span className="plan-badge">{t(lang, 'mostPopular')}</span>}
             <div className="card-body"><h3>{p.name}</h3>
               <p><span className="price plan-price">${(p.price_cents / 100).toFixed(0)}/mo</span></p>
               <p>{p.sessions} × 45-min sessions + ${(p.credit_cents / 100).toFixed(0)} credit · unlimited messaging</p>
@@ -140,35 +135,38 @@ export default function Home() {
         ))}</div>
       </div></section>)}
 
-      {/* CONTENT — mosaic: one wide featured card, one card pushed down on the
-          right, one tucked in low on the left. */}
+      {/* CONTENT — one wide featured card on top, two cards side by side
+          below, all sharing a baseline. FIX 2026-11-12: the mosaic's
+          pushed-down / tucked-in offsets are gone. */}
       {cat && (<section className="section home-sec"><div className="container">
         <div className="ed-head"><span className="sec-index">03</span><h2>{t(lang, 'content')}</h2><span className="sec-rule" aria-hidden="true" /><Link href="/content" className="sec-more" aria-label={t(lang, 'content')}>→</Link></div>
         <div className="content-mosaic">{cat.content.slice(0, 3).map((c: any, i: number) => i === 0 ? (
           <article className="card media-card content-feature" key={c.id}>
             <img className="content-feature-media" src={coverFor(c.kind)} alt="" loading="lazy" />
-            <div className="card-body"><span className="badge">{c.kind}</span> <span className="muted">{c.meta}</span>
+            <div className="card-body"><span className="card-tags"><span className="badge">{c.kind}</span> <span className="muted">{c.meta}</span></span>
               <h3>{c.title}</h3><p className="muted">{c.description}</p>
               <p><span className="price">{priceLabel(c.price_cents)}</span> <Link href={`/content/${c.id}`}>{t(lang, 'buy')}</Link></p></div></article>
         ) : (
           <article className={`card media-card content-small s${i}`} key={c.id}>
             <ContentCover kind={c.kind} />
-            <div className="card-body"><span className="badge">{c.kind}</span> <span className="muted">{c.meta}</span>
+            <div className="card-body"><span className="card-tags"><span className="badge">{c.kind}</span> <span className="muted">{c.meta}</span></span>
               <h3>{c.title}</h3><p className="muted">{c.description}</p>
               <p><span className="price">{priceLabel(c.price_cents)}</span> <Link href={`/content/${c.id}`}>{t(lang, 'buy')}</Link></p></div></article>
         ))}</div>
       </div></section>)}
 
-      {/* TESTS — two columns, the second dropped lower: a staggered pair. */}
+      {/* TESTS — two aligned columns sharing a baseline. FIX 2026-11-12:
+          the second column's 64px drop is gone. */}
       {cat && (<section className="tint-band"><div className="container">
         <div className="ed-head"><span className="sec-index">04</span><h2>{t(lang, 'tests')}</h2><span className="sec-rule" aria-hidden="true" /><Link href="/tests" className="sec-more" aria-label={t(lang, 'tests')}>→</Link></div>
         <div className="tests-cols">
           <div className="tests-col">{testColA.map(testCard)}</div>
-          <div className="tests-col tests-col-b">{testColB.map(testCard)}</div>
+          <div className="tests-col">{testColB.map(testCard)}</div>
         </div>
       </div></section>)}
 
-      {/* COUNSELORS — a diagonal cascade: each card steps a little lower. */}
+      {/* COUNSELORS — a clean aligned grid. FIX 2026-11-12: the diagonal
+          cascade steps are gone; all cards share one baseline. */}
       {cat && (<section className="section home-sec"><div className="container">
         <div className="ed-head"><span className="sec-index">05</span><h2>{t(lang, 'counselors')}</h2><span className="sec-rule" aria-hidden="true" /><Link href="/counselors" className="sec-more" aria-label={t(lang, 'counselors')}>→</Link></div>
         <div className="counselors-cascade">{cat.counselors.slice(0, 4).map((c: any) => (

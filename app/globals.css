@@ -118,6 +118,12 @@ small, .muted { color: var(--text-muted); }
   padding: 2px 10px; border-radius: 999px;
   background: var(--violet-light); color: var(--plum);
 }
+/* FIX 2026-11-12: .card-body is a flex column, so a bare .badge (and any
+   bare inline span) stretched to a full-width bar. Pills must be real
+   inline pills: wrap badge + meta in .card-tags, and never let a bare
+   badge stretch even if it is unwrapped somewhere. */
+.card-tags { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; align-self: flex-start; }
+.card-body > .badge { align-self: flex-start; }
 .badge.teal { background: var(--teal-light); color: var(--teal-dark); }
 .price { font-weight: 700; color: var(--plum); font-size: 1.1rem; }
 
@@ -379,27 +385,25 @@ tr:hover td { background: var(--card-tint); }
 .home-sec { padding: 8px 0 28px; }
 .home-sec .ed-head:first-child { margin-top: 28px; }
 
-/* CONTENT MOSAIC — wide feature, right card pushed down, third tucked low-left */
-.content-mosaic { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; align-items: start; }
-.card.media-card.content-feature { grid-column: 1 / 9; flex-direction: row; }
+/* CONTENT — FIX 2026-11-12: the mosaic's pushed-down / tucked-in offsets
+   left sloping rows and empty gaps. Now: one wide feature row on top,
+   two cards side by side below, all sharing a baseline. */
+.content-mosaic { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; align-items: stretch; }
+.card.media-card.content-feature { grid-column: 1 / -1; flex-direction: row; }
 .content-feature-media { width: 40%; min-height: 230px; object-fit: cover; flex-shrink: 0; }
-.content-small.s1 { grid-column: 9 / 13; margin-top: 64px; }
-.content-small.s2 { grid-column: 3 / 9; }
+.content-small.s1 { grid-column: 1 / 7; }
+.content-small.s2 { grid-column: 7 / 13; }
 
-/* TESTS — floating rounded panel; two columns, second dropped lower */
+/* TESTS — floating rounded panel; two aligned columns sharing a baseline.
+   FIX 2026-11-12: the second column no longer drops 64px. */
 .tint-band { background: var(--violet-soft); border-radius: 44px; margin: 12px 16px 0; padding: 4px 0 48px; }
 .tint-band .ed-head { margin-top: 28px; }
 .tests-cols { display: flex; gap: 20px; align-items: flex-start; }
 .tests-col { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
-.tests-col-b { padding-top: 64px; }
 
-/* COUNSELORS — diagonal cascade, each card a step lower */
-.counselors-cascade { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 20px; align-items: start; }
-@media (min-width: 1020px) {
-  .counselors-cascade > *:nth-child(2) { margin-top: 32px; }
-  .counselors-cascade > *:nth-child(3) { margin-top: 64px; }
-  .counselors-cascade > *:nth-child(4) { margin-top: 96px; }
-}
+/* COUNSELORS — FIX 2026-11-12: the diagonal cascade is gone; cards share
+   one baseline in a clean grid (the steps left sloping rows and gaps). */
+.counselors-cascade { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 20px; align-items: stretch; }
 
 /* PLANS — deep-plum band; featured plan rises above the rest */
 .band-plum {
@@ -411,10 +415,21 @@ tr:hover td { background: var(--card-tint); }
 .band-plum .sec-rule { background: rgba(255, 255, 255, 0.22); }
 .band-plum .sec-more { border-color: rgba(255, 255, 255, 0.4); color: #fff; }
 .band-plum .sec-more:hover { background: #fff; color: var(--plum); border-color: #fff; }
-.plans-arc { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; align-items: start; }
+.plans-arc { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; align-items: start; margin-top: 18px; }
 @media (min-width: 900px) {
   .plans-arc > .plan-card { margin-top: 28px; }
   .plans-arc > .plan-card.featured { margin-top: 0; }
+}
+/* FIX 2026-11-12: the featured plan's lift read as a mistake because
+   nothing explained it. It now carries a visible "Most popular" badge,
+   so the lift is clearly deliberate. */
+.plan-card { position: relative; }
+.plan-badge {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  background: var(--violet-accent); color: #fff;
+  font-size: 0.78rem; font-weight: 700; white-space: nowrap;
+  padding: 4px 14px; border-radius: 999px; z-index: 1;
+  box-shadow: 0 4px 12px rgba(76, 58, 122, 0.3);
 }
 
 /* Diagnosis note — centred editorial footnote with a small violet rule */
@@ -441,34 +456,30 @@ tr:hover td { background: var(--card-tint); }
   .content-feature-media { width: 100%; min-height: 0; aspect-ratio: 3 / 2; }
   .content-small.s1, .content-small.s2 { grid-column: 1 / -1; margin-top: 0; }
   .tests-cols { flex-direction: column; }
-  .tests-col-b { padding-top: 0; }
   .tint-band { margin: 8px 8px 0; border-radius: 32px; }
   .band-plum { border-radius: 32px 32px 0 0; }
   .ed-head h2 { font-size: 1.6rem; }
 }
 
-/* ---- Three pillars — the second glance (2026-11-12, unpushed) ----
-   One interlocking triptych: a tall dark Tests panel anchors the left,
-   the Counselors card overlaps it top-right, the Content card tucks in
-   low-right and slides under the Counselors card. Ghost numbers float
-   at the top inline-end corner of each panel. Plans follow immediately. */
+/* ---- Three pillars — the second glance (2026-11-12) ----
+   FIX 2026-11-12: the interlocking triptych overlapped cards and clipped
+   text (Counselors covered a third of Tests; Content left a big gap).
+   Now a clean three-column grid: NO card covers another, all share one
+   baseline, buttons align at the bottom. The dark Tests panel, the white
+   Counselors card and the Content card keep the identity — only the
+   overlap is gone. Ghost numbers removed: one sat on top of a pill. */
 .pillars-sec { padding: 8px 0 44px; overflow: clip; }
 .pillars-sub { color: var(--text-muted); max-width: 56ch; margin: -8px 0 26px; }
-.pillars { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; align-items: start; position: relative; }
+.pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: stretch; position: relative; }
 .pillars::before {
   content: ""; position: absolute; width: 340px; height: 340px; border-radius: 50%;
   background: radial-gradient(circle, rgba(167, 139, 250, 0.18), transparent 65%);
   top: -70px; inset-inline-end: 0; pointer-events: none;
 }
-.pillar { position: relative; }
-.pillar-num {
-  position: absolute; top: 18px; inset-inline-end: 22px;
-  font-size: 2.4rem; font-weight: 800; line-height: 1; color: var(--violet-accent);
-  opacity: 0.85; pointer-events: none;
-}
-/* 01 — Tests: tall dark anchor spanning both rows */
+.pillar { position: relative; display: flex; flex-direction: column; }
+.pillar .btn { margin-top: auto; align-self: flex-start; }
+/* 01 — Tests: dark panel, same height as its siblings */
 .pillar-tests {
-  grid-column: 1 / 6; grid-row: 1 / 3; z-index: 0;
   background: linear-gradient(165deg, var(--plum) 0%, var(--plum-dark) 100%);
   color: #fff; border-radius: 24px; padding: 30px 28px 32px;
   box-shadow: 0 18px 44px rgba(76, 58, 122, 0.28);
@@ -478,24 +489,11 @@ tr:hover td { background: var(--card-tint); }
 .pillar-tests .price { color: #fff; }
 .pillar-tests .test-mark { width: 56px; height: 56px; font-size: 1.6rem; }
 .pillar-item { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
-.pillar-tests .btn { background: #fff; color: var(--plum); margin-top: 10px; }
+.pillar-tests .btn { background: #fff; color: var(--plum); }
 .pillar-tests .btn:hover { background: var(--violet-light); text-decoration: none; }
-/* 02 — Counselors: white card overlapping the Tests panel, top-right */
-.pillar-counselors { grid-column: 5 / 13; grid-row: 1 / 2; z-index: 1; margin-inline-start: -28px; margin-top: 26px; }
-.pillar-counselors .counselor-top { padding-inline-end: 52px; }
-.pillar-counselors .btn { margin-top: 6px; }
-/* 03 — Content: horizontal card tucked low-right, sliding under Counselors */
-.card.media-card.pillar-content { grid-column: 6 / 13; grid-row: 2 / 3; z-index: 2; flex-direction: row; margin-inline-start: -20px; margin-top: -14px; }
-.pillar-content-media { width: 38%; min-height: 200px; object-fit: cover; flex-shrink: 0; }
-
-/* Pillars — mobile: one clean stack, overlaps and offsets reset */
-@media (max-width: 820px) {
-  .pillars { grid-template-columns: 1fr; }
-  .pillar-tests, .pillar-counselors, .card.media-card.pillar-content { grid-column: 1 / -1; grid-row: auto; margin: 0; }
-  .card.media-card.pillar-content { flex-direction: column; }
-  .pillar-content-media { width: 100%; min-height: 0; aspect-ratio: 3 / 2; }
-  .pillar-num { font-size: 2rem; }
-}
+/* 03 — Content: cover on top, body below (was a cramped side-by-side row) */
+.card.media-card.pillar-content { flex-direction: column; }
+.pillar-content-media { width: 100%; min-height: 0; aspect-ratio: 3 / 2; object-fit: cover; flex-shrink: 0; }
 
 /* Emergency talk — floating button + modal.
    Warm amber so it stands out from the calm violet design without looking
@@ -599,11 +597,14 @@ tr:hover td { background: var(--card-tint); }
   font-family: var(--font-arabic), 'Traditional Arabic', Georgia, serif;
 }
 
-/* Headline tail — italic lavender serif on a soft teal bar, full width
-   of the headline column, exactly as in the preview. Block so it starts
-   on its own line and the bar spans the column. */
+/* Headline tail — italic lavender serif on a soft teal bar, exactly as
+   in the preview. FIX 2026-11-12: the bar used to span the full headline
+   column and slice into the floating report card. Now width: fit-content,
+   so the bar hugs the text only and can never reach the card. */
 .hero-title-accent {
   display: block;
+  width: fit-content;
+  max-width: 100%;
   font-style: italic;
   font-weight: 500;
   color: var(--violet-accent);
@@ -645,13 +646,19 @@ a.hero-float-card:hover { text-decoration: none; transform: translateY(-2px); }
 }
 .hero-segments i.on { background: var(--violet); }
 .hero-segments i.on.teal { background: var(--teal); }
-/* (a) Report card — top, overlapping the arch's inline-start edge */
-.hero-float-report { top: 15%; inset-inline-start: -30px; }
+/* (a) Report card — top, overlapping the arch's inline-start edge.
+   FIX 2026-11-12: pulled slightly inward so it stays clear of the
+   headline column even at narrow desktop widths. */
+.hero-float-report { top: 12%; inset-inline-start: -16px; }
 /* (b) Counselor card — bottom, overlapping the arch's inline-end edge */
 .hero-float-counselor {
   bottom: 10%; inset-inline-end: -22px;
   display: flex; align-items: center; gap: 12px;
+  max-width: 320px;
 }
+/* FIX 2026-11-12: the specialty line wrapped awkwardly — keep it on one
+   line on desktop (reset to normal wrapping on mobile, see below). */
+.hero-float-counselor .muted { white-space: nowrap; }
 .hero-float-counselor .avatar { width: 46px; height: 46px; font-size: 1rem; }
 .hero-float-c-body { display: flex; flex-direction: column; min-width: 0; }
 .hero-float-book {
@@ -664,5 +671,6 @@ a.hero-float-card:hover { text-decoration: none; transform: translateY(-2px); }
 @media (max-width: 820px) {
   .hero-arch { display: flex; flex-direction: column; }
   .hero-float-card { position: static; max-width: none; margin: 12px 0 0; }
+  .hero-float-counselor .muted { white-space: normal; }
   .hero-title-accent { padding: 2px 10px 4px; }
 }

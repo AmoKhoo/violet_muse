@@ -21,7 +21,7 @@ export default function ContentPage() {
     <div className="grid">{items.map((c: any) => (
       <div className="card media-card" key={c.id}>
         <ContentCover kind={c.kind} />
-        <div className="card-body"><span className="badge">{c.kind}</span> <span className="muted">{c.meta}</span>
+        <div className="card-body"><span className="card-tags"><span className="badge">{c.kind}</span> <span className="muted">{c.meta}</span></span>
           <h3>{c.title}</h3><p className="muted">{c.description}</p>
           <p><span className="price">{priceLabel(c.price_cents)}</span></p>
           <Link href={`/content/${c.id}`} className="btn">{c.price_cents === 0 ? t(lang, 'free') : t(lang, 'buy')}</Link></div></div>
