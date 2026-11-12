@@ -31,7 +31,7 @@ export default function Nav() {
   return (
     <header className="header">
       <div className="header-inner">
-        <Link href="/" className="brand">Violet<span>.</span></Link>
+        <Link href="/" className="brand"><img src="/logo.svg" className="brand-mark" alt="" aria-hidden="true" />Violet<span>.</span></Link>
         <nav className="nav">
           {links.slice(1).map((l) => (
             <Link key={l.href} href={l.href} className={pathname === l.href ? 'active' : ''}>{l.label}</Link>

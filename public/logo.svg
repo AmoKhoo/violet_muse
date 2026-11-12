@@ -1,0 +1,14 @@
+<!-- Violet logo mark — an original five-petal violet bloom.
+     Five petals radiate from a single point, the flower's heart (teal):
+     outer petals lavender #A78BFA, mid petals soft violet #8B7BC7,
+     centre petal deep plum #4C3A7A. The two outer petals and the centre
+     petal read as a soft "V" — Violet's initial — inside the bloom.
+     Clean geometry only, no raster, no clip-art; legible at 16px. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Violet">
+  <ellipse cx="32" cy="30" rx="6.5" ry="15" fill="#A78BFA" transform="rotate(-48 32 46)"/>
+  <ellipse cx="32" cy="30" rx="6.5" ry="15" fill="#A78BFA" transform="rotate(48 32 46)"/>
+  <ellipse cx="32" cy="30" rx="6.5" ry="15" fill="#8B7BC7" transform="rotate(-24 32 46)"/>
+  <ellipse cx="32" cy="30" rx="6.5" ry="15" fill="#8B7BC7" transform="rotate(24 32 46)"/>
+  <ellipse cx="32" cy="30" rx="6.5" ry="15" fill="#4C3A7A"/>
+  <circle cx="32" cy="46" r="3.6" fill="#6FA8A0"/>
+</svg>

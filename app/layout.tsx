@@ -6,6 +6,7 @@ import Nav from '@/components/Nav';
 export const metadata: Metadata = {
   title: 'Violet — Online Psychology',
   description: 'Violet: online psychology services in English, French and Arabic — content, AI tests, counselors, plans and organizations.',
+  icons: { icon: '/logo.svg' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
