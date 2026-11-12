@@ -7,61 +7,304 @@
       "role": "admin",
       "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
       "credit_cents": 0,
-      "created_at": "2026-11-11T15:03:07.158Z"
+      "created_at": "2026-11-12T14:00:00.000Z"
     },
     {
       "id": 2,
-      "name": "Maya",
-      "email": "maya@demo.member",
-      "role": "member",
-      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
-      "credit_cents": 0,
-      "created_at": "2026-11-11T15:03:07.158Z"
-    },
-    {
-      "id": 3,
-      "name": "Mr. Daniel (School Leader)",
-      "email": "leader@demo.school",
+      "name": "Rania Khoury",
+      "email": "rania.khoury@violet.app",
       "role": "leader",
       "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
       "credit_cents": 0,
-      "created_at": "2026-11-11T15:03:07.158Z"
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "name": "Karim Haddad",
+      "email": "karim.haddad@violet.app",
+      "role": "leader",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
     },
     {
       "id": 4,
-      "name": "Dr. Layla Haddad",
-      "email": "layla@demo.counselor",
-      "role": "counselor",
+      "name": "Maya Sleiman",
+      "email": "maya.sleiman@violet.app",
+      "role": "leader",
       "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
       "credit_cents": 0,
-      "created_at": "2026-11-11T15:03:07.158Z"
+      "created_at": "2026-11-12T14:00:00.000Z"
     },
     {
       "id": 5,
-      "name": "Sara (student)",
-      "email": "sara@demo.student",
-      "role": "member",
+      "name": "Dr. Layla Haddad",
+      "email": "layla.haddad@violet.app",
+      "role": "counselor",
       "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
       "credit_cents": 0,
-      "created_at": "2026-11-11T15:03:07.158Z"
+      "created_at": "2026-11-12T14:00:00.000Z"
     },
     {
       "id": 6,
-      "name": "Karim (student)",
-      "email": "karim@demo.student",
-      "role": "member",
+      "name": "Dr. Marc Dubois",
+      "email": "marc.dubois@violet.app",
+      "role": "counselor",
       "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
       "credit_cents": 0,
-      "created_at": "2026-11-11T15:03:07.158Z"
+      "created_at": "2026-11-12T14:00:00.000Z"
     },
     {
       "id": 7,
-      "name": "Lina (student)",
-      "email": "lina@demo.student",
+      "name": "Dr. Sarah Klein",
+      "email": "sarah.klein@violet.app",
+      "role": "counselor",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 8,
+      "name": "Dr. Omar Nasser",
+      "email": "omar.nasser@violet.app",
+      "role": "counselor",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 9,
+      "name": "Dr. Claire Fontaine",
+      "email": "claire.fontaine@violet.app",
+      "role": "counselor",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 10,
+      "name": "Dr. James Whitfield",
+      "email": "james.whitfield@violet.app",
+      "role": "counselor",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 11,
+      "name": "Dr. Nadia Rahal",
+      "email": "nadia.rahal@violet.app",
+      "role": "counselor",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 12,
+      "name": "Dr. Pierre Lambert",
+      "email": "pierre.lambert@violet.app",
+      "role": "counselor",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 13,
+      "name": "Dr. Elena Marsh",
+      "email": "elena.marsh@violet.app",
+      "role": "counselor",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 14,
+      "name": "Dr. Sofia Aoun",
+      "email": "sofia.aoun@violet.app",
+      "role": "counselor",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 15,
+      "name": "Sara Khoury",
+      "email": "sara.khoury@violet.app",
       "role": "member",
       "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
       "credit_cents": 0,
-      "created_at": "2026-11-11T15:03:07.158Z"
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 16,
+      "name": "Karim Nasser",
+      "email": "karim.nasser@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 17,
+      "name": "Lina Haddad",
+      "email": "lina.haddad@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 18,
+      "name": "Julien Moreau",
+      "email": "julien.moreau@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 19,
+      "name": "Emma Lefevre",
+      "email": "emma.lefevre@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 20,
+      "name": "Omar Saleh",
+      "email": "omar.saleh@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 21,
+      "name": "Yasmin Aoun",
+      "email": "yasmin.aoun@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 22,
+      "name": "Hugo Bernard",
+      "email": "hugo.bernard@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 23,
+      "name": "Chloe Martin",
+      "email": "chloe.martin@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 24,
+      "name": "Adam Rizk",
+      "email": "adam.rizk@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 25,
+      "name": "Nour Chamoun",
+      "email": "nour.chamoun@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 26,
+      "name": "Lucas Petit",
+      "email": "lucas.petit@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 27,
+      "name": "Mira Fakhoury",
+      "email": "mira.fakhoury@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 28,
+      "name": "Gabriel Haddad",
+      "email": "gabriel.haddad@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 29,
+      "name": "Lea Abou Jaoude",
+      "email": "lea.aboujaoude@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 30,
+      "name": "Thomas Girard",
+      "email": "thomas.girard@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 31,
+      "name": "Dana Sleiman",
+      "email": "dana.sleiman@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 32,
+      "name": "Noah Karam",
+      "email": "noah.karam@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 33,
+      "name": "Zoe Haddad",
+      "email": "zoe.haddad@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 34,
+      "name": "Alex Rahal",
+      "email": "alex.rahal@violet.app",
+      "role": "member",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
+      "credit_cents": 0,
+      "created_at": "2026-11-12T14:00:00.000Z"
     }
   ],
   "plans": [
@@ -225,7 +468,7 @@
   "counselors": [
     {
       "id": 1,
-      "user_id": 4,
+      "user_id": 5,
       "name": "Dr. Layla Haddad",
       "specialty": "{\"en\":\"Anxiety & stress\",\"fr\":\"Anxiété et stress\",\"ar\":\"القلق والتوتر\"}",
       "languages": "ar,fr,en",
@@ -239,7 +482,7 @@
     },
     {
       "id": 2,
-      "user_id": null,
+      "user_id": 6,
       "name": "Dr. Marc Dubois",
       "specialty": "{\"en\":\"Couples & relationships\",\"fr\":\"Couples et relations\",\"ar\":\"الأزواج والعلاقات\"}",
       "languages": "fr,en",
@@ -253,7 +496,7 @@
     },
     {
       "id": 3,
-      "user_id": null,
+      "user_id": 7,
       "name": "Dr. Sarah Klein",
       "specialty": "{\"en\":\"Depression & mood\",\"fr\":\"Dépression et humeur\",\"ar\":\"الاكتئاب والمزاج\"}",
       "languages": "en",
@@ -267,7 +510,7 @@
     },
     {
       "id": 4,
-      "user_id": null,
+      "user_id": 8,
       "name": "Dr. Omar Nasser",
       "specialty": "{\"en\":\"Teens & family\",\"fr\":\"Adolescents et famille\",\"ar\":\"المراهقون والأسرة\"}",
       "languages": "ar,en",
@@ -281,7 +524,7 @@
     },
     {
       "id": 5,
-      "user_id": null,
+      "user_id": 9,
       "name": "Dr. Claire Fontaine",
       "specialty": "{\"en\":\"Trauma & grief\",\"fr\":\"Trauma et deuil\",\"ar\":\"الصدمة والحزن\"}",
       "languages": "fr,en",
@@ -295,7 +538,7 @@
     },
     {
       "id": 6,
-      "user_id": null,
+      "user_id": 10,
       "name": "Dr. James Whitfield",
       "specialty": "{\"en\":\"Work & burnout\",\"fr\":\"Travail et épuisement\",\"ar\":\"العمل والإنهاك المهني\"}",
       "languages": "en",
@@ -309,7 +552,7 @@
     },
     {
       "id": 7,
-      "user_id": null,
+      "user_id": 11,
       "name": "Dr. Nadia Rahal",
       "specialty": "{\"en\":\"Anger & emotional regulation\",\"fr\":\"Colère et régulation émotionnelle\",\"ar\":\"الغضب وتنظيم المشاعر\"}",
       "languages": "ar,fr,en",
@@ -323,7 +566,7 @@
     },
     {
       "id": 8,
-      "user_id": null,
+      "user_id": 12,
       "name": "Dr. Pierre Lambert",
       "specialty": "{\"en\":\"Sleep & habits\",\"fr\":\"Sommeil et habitudes\",\"ar\":\"النوم والعادات\"}",
       "languages": "fr,en",
@@ -334,61 +577,565 @@
       "photo": "",
       "bio": "{\"en\":\"Behavioral sleep specialist: insomnia, routines and habit change.\",\"fr\":\"Spécialiste comportemental du sommeil : insomnie, routines et changement d'habitudes.\",\"ar\":\"أخصائي سلوكي في النوم: الأرق والروتين وتغيير العادات.\"}",
       "pending_bio": null
-    }
-  ],
-  "subscriptions": [
+    },
     {
-      "id": 1,
-      "user_id": 2,
-      "plan_id": 2,
-      "billing": "monthly",
-      "sessions_left": 2,
-      "sessions_expire_at": "2026-12-11T15:03:07.167Z",
-      "started_at": "2026-11-11T15:03:07.158Z"
+      "id": 9,
+      "user_id": 13,
+      "name": "Dr. Elena Marsh",
+      "specialty": "{\"en\": \"Addiction & habits\", \"fr\": \"Addictions et habitudes\", \"ar\": \"الإدمان والعادات\"}",
+      "languages": "en,fr",
+      "rating": 4.7,
+      "sessions_done": 560,
+      "session_price_cents": 6500,
+      "status": "approved",
+      "photo": "",
+      "bio": "{\"en\": \"Psychologist specializing in addiction and habit change — alcohol, screens, and compulsive behaviors — with a practical, shame-free approach.\", \"fr\": \"Psychologue spécialisée dans les addictions et le changement d'habitudes — alcool, écrans, comportements compulsifs — une approche pratique et sans jugement.\", \"ar\": \"أخصائية نفسية متخصصة في الإدمان وتغيير العادات — الكحول والشاشات والسلوكيات القهرية — بأسلوب عملي دون أحكام.\"}",
+      "pending_bio": null
+    },
+    {
+      "id": 10,
+      "user_id": 14,
+      "name": "Dr. Sofia Aoun",
+      "specialty": "{\"en\": \"Child & adolescent\", \"fr\": \"Enfants et adolescents\", \"ar\": \"الأطفال والمراهقون\"}",
+      "languages": "ar,en",
+      "rating": 4.8,
+      "sessions_done": 390,
+      "session_price_cents": 6500,
+      "status": "approved",
+      "photo": "",
+      "bio": "{\"en\": \"Child and adolescent psychologist helping young people and their parents with school stress, friendships, and big feelings.\", \"fr\": \"Psychologue pour enfants et adolescents : stress scolaire, amitiés et grandes émotions, avec les jeunes et leurs parents.\", \"ar\": \"أخصائية نفسية للأطفال والمراهقين تساعد الشباب وأهلهم في ضغط المدرسة والصداقات والمشاعر الكبيرة.\"}",
+      "pending_bio": null
     }
   ],
+  "subscriptions": [],
   "credit_grants": [
     {
       "id": 1,
       "user_id": 2,
-      "amount_cents": 6000,
-      "remaining_cents": 6000,
-      "reason": "Silver plan credit",
-      "expires_at": "2027-01-10T15:03:07.167Z",
-      "created_at": "2026-11-11T15:03:07.158Z"
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "user_id": 3,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "user_id": 4,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "user_id": 15,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "user_id": 16,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "user_id": 17,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 7,
+      "user_id": 18,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 8,
+      "user_id": 19,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 9,
+      "user_id": 20,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 10,
+      "user_id": 21,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 11,
+      "user_id": 22,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 12,
+      "user_id": 23,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 13,
+      "user_id": 24,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 14,
+      "user_id": 25,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 15,
+      "user_id": 26,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 16,
+      "user_id": 27,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 17,
+      "user_id": 28,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 18,
+      "user_id": 29,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 19,
+      "user_id": 30,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 20,
+      "user_id": 31,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 21,
+      "user_id": 32,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 22,
+      "user_id": 33,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 23,
+      "user_id": 34,
+      "amount_cents": 100000,
+      "remaining_cents": 100000,
+      "reason": "Welcome credit",
+      "expires_at": "2027-01-11T14:00:00.000Z",
+      "created_at": "2026-11-12T14:00:00.000Z"
     }
   ],
-  "orders": [],
-  "library_items": [],
-  "test_results": [],
-  "bookings": [],
-  "messages": [],
-  "counselor_notes": [],
+  "orders": [
+    {
+      "id": 1,
+      "user_id": 15,
+      "guest_email": "",
+      "kind": "content",
+      "item_id": 2,
+      "label": "{\"en\":\"Understanding Anxiety: a practical guide\",\"fr\":\"Comprendre l'anxiété : un guide pratique\",\"ar\":\"فهم القلق: دليل عملي\"}",
+      "amount_cents": 500,
+      "payment": "demo",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "user_id": 22,
+      "guest_email": "",
+      "kind": "content",
+      "item_id": 1,
+      "label": "{\"en\":\"Anger Control — a 50-minute audio session\",\"fr\":\"Contrôler sa colère — une session audio de 50 minutes\",\"ar\":\"التحكم بالغضب — جلسة صوتية من ٥٠ دقيقة\"}",
+      "amount_cents": 200,
+      "payment": "demo",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    }
+  ],
+  "library_items": [
+    {
+      "id": 1,
+      "user_id": 15,
+      "owner_key": "sara.khoury@violet.app",
+      "kind": "content",
+      "item_id": 2,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "user_id": 22,
+      "owner_key": "hugo.bernard@violet.app",
+      "kind": "content",
+      "item_id": 1,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    }
+  ],
+  "test_results": [
+    {
+      "id": 1,
+      "user_id": 15,
+      "test_id": 2,
+      "org_id": null,
+      "answers": [
+        3,
+        2,
+        3,
+        2,
+        3,
+        3,
+        2,
+        3
+      ],
+      "scores": {
+        "total": 29,
+        "max": 32,
+        "percent": 91
+      },
+      "headline": "Emotional intelligence snapshot — 91% of the maximum score",
+      "report": "Emotional intelligence snapshot — 91% of the maximum score\n\nWhat your answers show\nAcross 8 questions you scored 29 out of 32. Treat this as a snapshot of the last days, not a fixed label.\n\nA first step\nPick one small, concrete practice from your lowest-scoring area and try it daily for a week.\n\nNext step\nYour answers show strong self-awareness and empathy. Keep practising the pause before reacting when stress is high.\n\nThis report is a self-discovery snapshot, not a medical or clinical diagnosis, and not a replacement for talking with a licensed counselor.\n\nThis is not a diagnosis.",
+      "report_source": "local",
+      "ai_error": null,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "user_id": 22,
+      "test_id": 4,
+      "org_id": 2,
+      "answers": [
+        1,
+        2,
+        1,
+        0,
+        1,
+        2
+      ],
+      "scores": {
+        "total": 7,
+        "max": 18,
+        "percent": 39
+      },
+      "headline": "Anxiety screening snapshot — 7 of 18",
+      "report": "Anxiety screening snapshot — 7 of 18\n\nWhat your answers show\nAcross 6 questions you scored 7 out of 18. Treat this as a snapshot of the last days, not a fixed label.\n\nA first step\nPick one small, concrete practice from your lowest-scoring area and try it daily for a week.\n\nNext step\nIf anything here worries you, a single session with a counselor can help you read it properly.\n\nThis report is a self-discovery snapshot, not a medical or clinical diagnosis, and not a replacement for talking with a licensed counselor.\n\nThis is not a diagnosis.",
+      "report_source": "local",
+      "ai_error": null,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "user_id": 15,
+      "counselor_id": 1,
+      "starts_at": "2026-11-14T12:00:00.000Z",
+      "ends_at": "2026-11-14T12:45:00.000Z",
+      "status": "booked",
+      "payment": "demo",
+      "meet_url": "https://meet.google.com/a3f-9c2d-7b1",
+      "meet_status": "placeholder",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "user_id": 22,
+      "counselor_id": 3,
+      "starts_at": "2026-11-16T15:00:00.000Z",
+      "ends_at": "2026-11-16T15:45:00.000Z",
+      "status": "booked",
+      "payment": "demo",
+      "meet_url": "https://meet.google.com/4d1-77ab-0e9",
+      "meet_status": "placeholder",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "user_id": 28,
+      "counselor_id": 7,
+      "starts_at": "2026-11-18T09:30:00.000Z",
+      "ends_at": "2026-11-18T10:15:00.000Z",
+      "status": "booked",
+      "payment": "demo",
+      "meet_url": "https://meet.google.com/c8e-1a44-9f2",
+      "meet_status": "placeholder",
+      "created_at": "2026-11-12T14:00:00.000Z"
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "user_id": 15,
+      "counselor_id": 1,
+      "sender": "user",
+      "text": "Hi Dr. Haddad, looking forward to our session on Friday. I've been tracking my triggers this week.",
+      "created_at": "2026-11-12T10:15:00.000Z"
+    },
+    {
+      "id": 2,
+      "user_id": 15,
+      "counselor_id": 1,
+      "sender": "counselor",
+      "text": "Hello Sara, wonderful — bring your notes and we'll work through the top two triggers together.",
+      "created_at": "2026-11-12T10:42:00.000Z"
+    }
+  ],
+  "counselor_notes": [
+    {
+      "id": 1,
+      "counselor_id": 1,
+      "patient_id": 15,
+      "text": "Sara — 2nd session. Triggers: morning commute + deadline pressure. Responds well to the 90-second pause. Next: practise the cool-down before the team stand-up. Private note — only I can see this.",
+      "created_at": "2026-11-12T11:00:00.000Z"
+    }
+  ],
   "counselor_applications": [],
   "organizations": [
     {
       "id": 1,
-      "name": "Demo School — Grade 10",
+      "name": "Beirut International School — Grade 11",
+      "leader_id": 2,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Novatech Beirut — People Team",
       "leader_id": 3,
-      "created_at": "2026-11-11T15:03:07.158Z"
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "name": "Sahel Families Circle",
+      "leader_id": 4,
+      "created_at": "2026-11-12T14:00:00.000Z"
     }
   ],
   "org_members": [
     {
       "id": 1,
       "org_id": 1,
-      "user_id": 5
+      "user_id": 15
     },
     {
       "id": 2,
       "org_id": 1,
-      "user_id": 6
+      "user_id": 16
     },
     {
       "id": 3,
       "org_id": 1,
-      "user_id": 7
+      "user_id": 17
+    },
+    {
+      "id": 4,
+      "org_id": 1,
+      "user_id": 18
+    },
+    {
+      "id": 5,
+      "org_id": 1,
+      "user_id": 19
+    },
+    {
+      "id": 6,
+      "org_id": 1,
+      "user_id": 20
+    },
+    {
+      "id": 7,
+      "org_id": 1,
+      "user_id": 21
+    },
+    {
+      "id": 8,
+      "org_id": 2,
+      "user_id": 22
+    },
+    {
+      "id": 9,
+      "org_id": 2,
+      "user_id": 23
+    },
+    {
+      "id": 10,
+      "org_id": 2,
+      "user_id": 24
+    },
+    {
+      "id": 11,
+      "org_id": 2,
+      "user_id": 25
+    },
+    {
+      "id": 12,
+      "org_id": 2,
+      "user_id": 26
+    },
+    {
+      "id": 13,
+      "org_id": 2,
+      "user_id": 27
+    },
+    {
+      "id": 14,
+      "org_id": 3,
+      "user_id": 28
+    },
+    {
+      "id": 15,
+      "org_id": 3,
+      "user_id": 29
+    },
+    {
+      "id": 16,
+      "org_id": 3,
+      "user_id": 30
+    },
+    {
+      "id": 17,
+      "org_id": 3,
+      "user_id": 31
+    },
+    {
+      "id": 18,
+      "org_id": 3,
+      "user_id": 32
+    },
+    {
+      "id": 19,
+      "org_id": 3,
+      "user_id": 33
     }
   ],
-  "assignments": []
+  "assignments": [
+    {
+      "id": 1,
+      "org_id": 1,
+      "kind": "test",
+      "item_id": 2,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "org_id": 1,
+      "kind": "content",
+      "item_id": 1,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "org_id": 2,
+      "kind": "test",
+      "item_id": 4,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "org_id": 2,
+      "kind": "content",
+      "item_id": 5,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "org_id": 3,
+      "kind": "test",
+      "item_id": 1,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "org_id": 3,
+      "kind": "content",
+      "item_id": 2,
+      "created_at": "2026-11-12T14:00:00.000Z"
+    }
+  ]
 }
