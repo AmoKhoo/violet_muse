@@ -65,6 +65,14 @@ working — this is **not** a static export.
    `violet-muse.pages.dev` — open it, switch EN / FR / AR, log in with a
    demo account below, and try the tests, booking and admin panel.
 
+   **Important:** if a deployment already failed with the old preset
+   settings, **"Retry deployment" re-runs that old deployment with its
+   original config** — it does NOT pick up corrected build settings.
+   After fixing the settings, trigger a **new** deployment instead
+   (e.g. push a new commit to `main`, or use **Create deployment**),
+   so Cloudflare builds with `npm run pages:build` and an empty deploy
+   command.
+
 **فارسی:**
 ۱. به https://dash.cloudflare.com برو → **Workers & Pages** → **Create** →
    **Pages** → **Connect to Git**.
