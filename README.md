@@ -50,6 +50,14 @@ working — this is **not** a static export.
 3. Framework preset: **Next.js**. Set the build command to
    `npm run pages:build` and the build output directory to
    `.vercel/output/static` (the adapter's output).
+   **Do NOT leave the preset's defaults:** the Next.js preset fills in
+   build command `npm run build` and deploy command
+   `npx wrangler deploy`. That combination builds plain Next.js and then
+   fails the deploy in seconds with "Missing entry-point to Worker script
+   or to assets directory" — `wrangler deploy` is for Workers, not Pages.
+   So set the build command to `npm run pages:build` and **clear/remove
+   the deploy command entirely (leave it empty)** — Pages deploys the
+   output directory itself, no deploy command is needed.
 4. Environment variables: none required to look around. Optionally set
    `OPENAI_API_KEY`, `STRIPE_SECRET_KEY` / `STRIPE_PUBLISHABLE_KEY`,
    Google credentials and `SESSION_SECRET` (see `.env.example`).
@@ -64,6 +72,13 @@ working — this is **not** a static export.
 ۳. Framework preset را **Next.js** بگذار، دستور ساخت را
    `npm run pages:build` و پوشه خروجی ساخت را
    `.vercel/output/static` بگذار.
+   **مقادیر پیش‌فرض preset را دست‌نخورده نگذار:** preset دستور ساخت را
+   `npm run build` و دستور دیپلوی را `npx wrangler deploy` می‌گذارد.
+   با آن‌ها بیلد ساخته می‌شود ولی دیپلوی در چند ثانیه با خطای
+   "Missing entry-point to Worker script or to assets directory" می‌افتد،
+   چون `wrangler deploy` مال Workers است نه Pages. پس دستور ساخت را
+   `npm run pages:build` بگذار و **دستور دیپلوی را کاملا پاک کن (خالی
+   بماند)** — خود Pages پوشه خروجی را دیپلوی می‌کند و دستور دیپلوی لازم نیست.
 ۴. متغیر محیطی برای دیدن سایت لازم نیست. اگر خواستی `OPENAI_API_KEY`،
    کلیدهای Stripe، اطلاعات گوگل و `SESSION_SECRET` را بگذار
    (در `.env.example` هست).
