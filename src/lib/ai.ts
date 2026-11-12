@@ -101,9 +101,10 @@ export function localReport(test: TestRow, answers: number[]) {
 }
 
 function scoreFor(testId: number, qi: number, optionIndex: number): number {
-  if (testId === 4) return optionIndex; // anxiety: 0..3
-  if (testId === 3 && qi === 5) return 4 - optionIndex; // anger Q6 reverse-scored
-  return optionIndex + 1; // EI / anger: 1..4
+  const o = Math.max(0, Math.min(3, optionIndex)); // clamp: answers are 0-based 0..3
+  if (testId === 4) return o; // anxiety: 0..3
+  if (testId === 3 && qi === 5) return 4 - o; // anger Q6 reverse-scored
+  return o + 1; // EI / anger: 1..4
 }
 
 function ensureDisclaimer(text: string): string {

@@ -23,6 +23,9 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
   if (!Array.isArray(answers) || answers.length !== questions.length) {
     return NextResponse.json({ error: 'bad_answers' }, { status: 400 });
   }
+  if (answers.some((a, i) => !Number.isInteger(a) || a < 0 || a >= questions[i].options.length)) {
+    return NextResponse.json({ error: 'bad_answers' }, { status: 400 });
+  }
 
   let orgId: number | null = null;
   if (body.org_assignment_id) {
