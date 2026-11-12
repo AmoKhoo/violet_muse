@@ -29,13 +29,15 @@ export default function PlansPage() {
     {!cat && <p>{t(lang, 'loading')}</p>}
     <div className="grid">{(cat?.plans || []).map((p: any) => {
       const price = annual ? p.annual_price_cents : p.price_cents;
-      return (<div className="card" key={p.id}><h3>{p.name}</h3>
-        <p><span className="price">${(price / 100).toFixed(0)}</span>{annual ? ' / year' : ' / month'}</p>
-        {annual && <p className="muted">You save ${((p.price_cents * 12 * 0.15) / 100).toFixed(0)} vs monthly — 15% off the 12-month total, paid at once.</p>}
-        <p>{p.sessions} × 45-min sessions + ${(p.credit_cents / 100).toFixed(0)} credit</p>
-        <p className="muted">Unlimited messaging{p.workshops ? ' · Workshops' : ''}{p.priority ? ' · Priority booking' : ''}{p.org_seat ? ' · 1 org seat' : ''}</p>
-        <p className="muted">Value of sessions + credit: ${(p.value.total_value_cents / 100).toFixed(0)} — cheaper than buying singly.</p>
-        <button className="btn" onClick={() => subscribe(p.id)}>Subscribe</button>
+      return (<div className={`card plan-card${p.priority ? ' featured' : ''}`} key={p.id}>
+        <div className="card-body"><h3>{p.name}</h3>
+          <p><span className="price plan-price">${(price / 100).toFixed(0)}</span>{annual ? ' / year' : ' / month'}</p>
+          {annual && <p className="muted">You save ${((p.price_cents * 12 * 0.15) / 100).toFixed(0)} vs monthly — 15% off the 12-month total, paid at once.</p>}
+          <p>{p.sessions} × 45-min sessions + ${(p.credit_cents / 100).toFixed(0)} credit</p>
+          <p className="muted">Unlimited messaging{p.workshops ? ' · Workshops' : ''}{p.priority ? ' · Priority booking' : ''}{p.org_seat ? ' · 1 org seat' : ''}</p>
+          <p className="muted">Value of sessions + credit: ${(p.value.total_value_cents / 100).toFixed(0)} — cheaper than buying singly.</p>
+          <button className="btn" onClick={() => subscribe(p.id)}>Subscribe</button>
+        </div>
       </div>);
     })}</div>
     {msg && <p className="notice">{msg}</p>}

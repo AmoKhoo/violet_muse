@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useLang } from '@/lib/providers';
 import { t } from '@/lib/i18n';
 import { api, priceLabel } from '@/lib/client';
+import { ContentCover } from '@/components/visuals';
 export default function ContentPage() {
   const { lang } = useLang();
   const [cat, setCat] = useState<any>(null);
@@ -18,10 +19,12 @@ export default function ContentPage() {
     </div>
     {!cat && <p>{t(lang, 'loading')}</p>}
     <div className="grid">{items.map((c: any) => (
-      <div className="card" key={c.id}><span className="badge">{c.kind}</span> <span className="muted">{c.meta}</span>
-        <h3>{c.title}</h3><p className="muted">{c.description}</p>
-        <p><span className="price">{priceLabel(c.price_cents)}</span></p>
-        <Link href={`/content/${c.id}`} className="btn">{c.price_cents === 0 ? t(lang, 'free') : t(lang, 'buy')}</Link></div>
+      <div className="card media-card" key={c.id}>
+        <ContentCover kind={c.kind} />
+        <div className="card-body"><span className="badge">{c.kind}</span> <span className="muted">{c.meta}</span>
+          <h3>{c.title}</h3><p className="muted">{c.description}</p>
+          <p><span className="price">{priceLabel(c.price_cents)}</span></p>
+          <Link href={`/content/${c.id}`} className="btn">{c.price_cents === 0 ? t(lang, 'free') : t(lang, 'buy')}</Link></div></div>
     ))}</div>
     {items.length === 0 && cat && <p className="muted">Nothing here yet.</p>}
   </div></div>);

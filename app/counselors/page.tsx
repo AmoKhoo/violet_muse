@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useLang } from '@/lib/providers';
 import { t } from '@/lib/i18n';
 import { api } from '@/lib/client';
+import { Avatar } from '@/components/visuals';
 export default function CounselorsPage() {
   const { lang } = useLang();
   const [cat, setCat] = useState<any>(null);
@@ -14,8 +15,10 @@ export default function CounselorsPage() {
     <p><Link href="/apply" className="btn secondary">Are you a counselor? Apply here</Link></p>
     {!cat && <p>{t(lang, 'loading')}</p>}
     <div className="grid">{(cat?.counselors || []).map((c: any) => (
-      <div className="card" key={c.id}><h3>{c.name}</h3>
-        <p className="muted">{c.specialty} · ★ {c.rating} · {c.sessions_done} sessions · {c.languages}</p>
+      <div className="card" key={c.id}>
+        <div className="counselor-top"><Avatar name={c.name} />
+          <div><h3>{c.name}</h3>
+            <p className="muted">{c.specialty} · ★ {c.rating} · {c.sessions_done} sessions · {c.languages}</p></div></div>
         <p>{c.bio}</p><p><span className="price">$65.00</span> / session</p>
         <Link href={`/counselors/${c.id}`} className="btn">{t(lang, 'book')}</Link></div>
     ))}</div>
