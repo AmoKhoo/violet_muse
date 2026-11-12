@@ -73,6 +73,9 @@ working — this is **not** a static export.
    so Cloudflare builds with `npm run pages:build` and an empty deploy
    command.
 
+   Deploy note (2026-11-12): the Pages project now uses a new API token
+   with full Cloudflare Pages permissions for the deploy step.
+
 **فارسی:**
 ۱. به https://dash.cloudflare.com برو → **Workers & Pages** → **Create** →
    **Pages** → **Connect to Git**.
