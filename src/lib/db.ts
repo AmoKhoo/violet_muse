@@ -4,39 +4,73 @@
 //
 // Storage:
 //  - Locally / on a Node host: ./data/violet.json (DATA_DIR env overrides it).
-//  - On Vercel (serverless): the filesystem is ephemeral, so writes go to
-//    /tmp/violet-data and do NOT survive redeploys. That is fine for checking
-//    the site, but for durable production data set DATABASE_URL (Postgres —
-//    Vercel Postgres / Neon) and swap this adapter; see docs/ARCHITECTURE.md.
+//    The file is used only when a real filesystem is available.
+//  - On Vercel / Cloudflare Pages (serverless, no persistent filesystem):
+//    writes live in memory only and do NOT survive redeploys or a new
+//    isolate. That is fine for checking the site, but for durable production
+//    data set DATABASE_URL (Postgres) and swap this adapter;
+//    see docs/ARCHITECTURE.md.
 //  - Seed data lives in src/seed-data.json and is copied on first boot.
-import fs from 'node:fs';
-import path from 'node:path';
+//
+// No `node:fs` / `node:path` imports here: Cloudflare Pages runs routes on
+// the Edge Runtime, where Node built-ins are not bundled. The filesystem is
+// loaded lazily (and only on a real Node host) via an eval'd require that the
+// bundler cannot statically trace; everywhere else the DB is in-memory.
 import seedData from '../seed-data.json';
 
 export type Db = typeof seedData;
 
+type FsLike = {
+  existsSync: (p: string) => boolean;
+  readFileSync: (p: string, enc: 'utf8') => string;
+  mkdirSync: (p: string, opts: { recursive: boolean }) => void;
+  writeFileSync: (p: string, data: string, enc: 'utf8') => void;
+  renameSync: (a: string, b: string) => void;
+};
+
+let fsModule: FsLike | null | undefined;
+function loadFs(): FsLike | null {
+  if (fsModule !== undefined) return fsModule;
+  try {
+    // Deliberately indirect: a static `require('node:fs')` would break the
+    // Edge bundle. On Node this resolves; on Workers/Edge it throws.
+    // eslint-disable-next-line no-eval
+    const req = eval('typeof require !== "undefined" ? require : null') as
+      | ((id: string) => FsLike)
+      | null;
+    fsModule = req ? req('node:fs') : null;
+  } catch {
+    fsModule = null;
+  }
+  return fsModule;
+}
+
 function dbDir(): string {
   if (process.env.DATA_DIR) return process.env.DATA_DIR;
-  if (process.env.VERCEL) return '/tmp/violet-data';
+  if (process.env.VERCEL || process.env.CF_PAGES) return '/tmp/violet-data';
   return './data';
 }
 
 function dbFile(): string {
-  return path.resolve(dbDir(), 'violet.json');
+  const dir = dbDir().replace(/\/$/, '');
+  return `${dir}/violet.json`;
 }
 
 let cache: Db | null = null;
 
 export function loadDb(): Db {
   if (cache) return cache;
-  const file = dbFile();
-  try {
-    if (fs.existsSync(file)) {
-      cache = JSON.parse(fs.readFileSync(file, 'utf8')) as Db;
-      return cache;
+  const fs = loadFs();
+  if (fs) {
+    const file = dbFile();
+    try {
+      if (fs.existsSync(file)) {
+        cache = JSON.parse(fs.readFileSync(file, 'utf8')) as Db;
+        return cache;
+      }
+    } catch {
+      // Corrupt / unreadable file: fall through to a fresh seed in memory.
     }
-  } catch {
-    // Corrupt / unreadable file: fall through to a fresh seed in memory.
   }
   cache = JSON.parse(JSON.stringify(seedData)) as Db;
   saveDb();
@@ -45,9 +79,12 @@ export function loadDb(): Db {
 
 export function saveDb(): void {
   if (!cache) return;
+  const fs = loadFs();
+  if (!fs) return; // No filesystem (e.g. serverless): keep the in-memory copy.
   try {
     const file = dbFile();
-    fs.mkdirSync(path.dirname(file), { recursive: true });
+    const dir = file.slice(0, file.lastIndexOf('/')) || '.';
+    fs.mkdirSync(dir, { recursive: true });
     const tmp = file + '.tmp';
     fs.writeFileSync(tmp, JSON.stringify(cache, null, 2), 'utf8');
     fs.renameSync(tmp, file);

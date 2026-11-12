@@ -1,10 +1,11 @@
+export const runtime = 'edge';
 import { NextResponse } from 'next/server';
 import { getDb, loc } from '@/lib/db';
 import { userFromRequest } from '@/lib/auth';
 import { creditUsable } from '@/lib/money';
 export const dynamic = 'force-dynamic';
 export async function GET(req: Request) {
-  const user = userFromRequest(req);
+  const user = await userFromRequest(req);
   if (!user) return NextResponse.json({ error: 'login_required' }, { status: 401 });
   const db: any = getDb();
   const url = new URL(req.url);

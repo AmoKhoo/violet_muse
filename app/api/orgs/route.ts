@@ -1,9 +1,10 @@
+export const runtime = 'edge';
 import { NextResponse } from 'next/server';
 import { getDb, saveDb, nextId, nowIso } from '@/lib/db';
 import { userFromRequest } from '@/lib/auth';
 export const dynamic = 'force-dynamic';
 export async function GET(req: Request) {
-  const user = userFromRequest(req);
+  const user = await userFromRequest(req);
   if (!user) return NextResponse.json({ error: 'login_required' }, { status: 401 });
   const db: any = getDb();
   return NextResponse.json({
@@ -12,7 +13,7 @@ export async function GET(req: Request) {
   });
 }
 export async function POST(req: Request) {
-  const user = userFromRequest(req);
+  const user = await userFromRequest(req);
   if (!user) return NextResponse.json({ error: 'login_required' }, { status: 401 });
   const { name } = await req.json();
   if (!name) return NextResponse.json({ error: 'name_required' }, { status: 400 });

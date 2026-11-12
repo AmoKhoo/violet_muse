@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { NextResponse } from 'next/server';
 import { getDb, saveDb, nextId, nowIso } from '@/lib/db';
 import { userFromRequest } from '@/lib/auth';
@@ -6,7 +7,7 @@ import { createMeetLink } from '@/lib/meet';
 import { EXTRA_SESSION_CENTS } from '@/lib/money';
 export const dynamic = 'force-dynamic';
 export async function GET(req: Request) {
-  const user = userFromRequest(req);
+  const user = await userFromRequest(req);
   if (!user) return NextResponse.json({ error: 'login_required' }, { status: 401 });
   const db: any = getDb();
   const list = user.role === 'counselor'
@@ -15,7 +16,7 @@ export async function GET(req: Request) {
   return NextResponse.json({ bookings: list });
 }
 export async function POST(req: Request) {
-  const user = userFromRequest(req);
+  const user = await userFromRequest(req);
   if (!user) return NextResponse.json({ error: 'login_required' }, { status: 401 });
   const { counselor_id, starts_at } = await req.json();
   const db: any = getDb();

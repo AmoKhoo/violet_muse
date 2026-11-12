@@ -4,11 +4,13 @@
 // GOOGLE_REFRESH_TOKEN are set, a booking gets a generated meet.google.com
 // link that is NOT a real Google Meet event. The link is stored on the booking
 // so the UI, notifications and calendar display all work end to end.
-import crypto from 'node:crypto';
-
+// Web Crypto only — no `node:crypto`, so this runs on Node, Edge and
+// Cloudflare Workers alike.
 export function createMeetLink({ title, startsAt, endsAt }: { title: string; startsAt: string; endsAt: string }) {
   if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_REFRESH_TOKEN) {
-    const code = crypto.randomBytes(5).toString('hex').slice(0, 10).replace(/(.{3})(.{4})(.{3})/, '$1-$2-$3');
+    const bytes = new Uint8Array(5);
+    globalThis.crypto.getRandomValues(bytes);
+    const code = Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join('').slice(0, 10).replace(/(.{3})(.{4})(.{3})/, '$1-$2-$3');
     return {
       url: `https://meet.google.com/${code}`,
       status: 'placeholder' as const,

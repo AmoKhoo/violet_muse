@@ -1,0 +1,12 @@
+# Cloudflare Pages — Violet
+# Deploy with: npm run pages:build  (build command on Cloudflare Pages)
+# Output directory on Cloudflare Pages: .vercel/output/static
+# The @cloudflare/next-on-pages adapter builds the Next.js app into the
+# .vercel/output directory that Pages serves, API routes included.
+# No static export: API routes keep working as Pages Functions.
+name = "violet"
+
+compatibility_date = "2026-11-12"
+compatibility_flags = ["nodejs_compat"]
+
+pages_build_output_dir = ".vercel/output/static"

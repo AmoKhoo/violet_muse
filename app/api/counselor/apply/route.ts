@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { NextResponse } from 'next/server';
 import { getDb, saveDb, nextId, nowIso } from '@/lib/db';
 export const dynamic = 'force-dynamic';

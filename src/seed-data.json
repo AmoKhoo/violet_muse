@@ -5,7 +5,7 @@
       "name": "Platform Owner",
       "email": "owner@platform.demo",
       "role": "admin",
-      "password_hash": "scrypt:798eb06d8535c569c434e21629f67007:f9130b0ada49b41551d95f1e0370ffd436ccdd43f6c93bc6daffd1d7f4d1ccc5f56f3dcd8bad4bc7855c3fde73d2c71f53248a1c7b894ded61e662fe16f3fd4f",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
       "credit_cents": 0,
       "created_at": "2026-11-11T15:03:07.158Z"
     },
@@ -14,7 +14,7 @@
       "name": "Maya",
       "email": "maya@demo.member",
       "role": "member",
-      "password_hash": "scrypt:798eb06d8535c569c434e21629f67007:f9130b0ada49b41551d95f1e0370ffd436ccdd43f6c93bc6daffd1d7f4d1ccc5f56f3dcd8bad4bc7855c3fde73d2c71f53248a1c7b894ded61e662fe16f3fd4f",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
       "credit_cents": 0,
       "created_at": "2026-11-11T15:03:07.158Z"
     },
@@ -23,7 +23,7 @@
       "name": "Mr. Daniel (School Leader)",
       "email": "leader@demo.school",
       "role": "leader",
-      "password_hash": "scrypt:798eb06d8535c569c434e21629f67007:f9130b0ada49b41551d95f1e0370ffd436ccdd43f6c93bc6daffd1d7f4d1ccc5f56f3dcd8bad4bc7855c3fde73d2c71f53248a1c7b894ded61e662fe16f3fd4f",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
       "credit_cents": 0,
       "created_at": "2026-11-11T15:03:07.158Z"
     },
@@ -32,7 +32,7 @@
       "name": "Dr. Layla Haddad",
       "email": "layla@demo.counselor",
       "role": "counselor",
-      "password_hash": "scrypt:798eb06d8535c569c434e21629f67007:f9130b0ada49b41551d95f1e0370ffd436ccdd43f6c93bc6daffd1d7f4d1ccc5f56f3dcd8bad4bc7855c3fde73d2c71f53248a1c7b894ded61e662fe16f3fd4f",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
       "credit_cents": 0,
       "created_at": "2026-11-11T15:03:07.158Z"
     },
@@ -41,7 +41,7 @@
       "name": "Sara (student)",
       "email": "sara@demo.student",
       "role": "member",
-      "password_hash": "scrypt:798eb06d8535c569c434e21629f67007:f9130b0ada49b41551d95f1e0370ffd436ccdd43f6c93bc6daffd1d7f4d1ccc5f56f3dcd8bad4bc7855c3fde73d2c71f53248a1c7b894ded61e662fe16f3fd4f",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
       "credit_cents": 0,
       "created_at": "2026-11-11T15:03:07.158Z"
     },
@@ -50,7 +50,7 @@
       "name": "Karim (student)",
       "email": "karim@demo.student",
       "role": "member",
-      "password_hash": "scrypt:798eb06d8535c569c434e21629f67007:f9130b0ada49b41551d95f1e0370ffd436ccdd43f6c93bc6daffd1d7f4d1ccc5f56f3dcd8bad4bc7855c3fde73d2c71f53248a1c7b894ded61e662fe16f3fd4f",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
       "credit_cents": 0,
       "created_at": "2026-11-11T15:03:07.158Z"
     },
@@ -59,7 +59,7 @@
       "name": "Lina (student)",
       "email": "lina@demo.student",
       "role": "member",
-      "password_hash": "scrypt:798eb06d8535c569c434e21629f67007:f9130b0ada49b41551d95f1e0370ffd436ccdd43f6c93bc6daffd1d7f4d1ccc5f56f3dcd8bad4bc7855c3fde73d2c71f53248a1c7b894ded61e662fe16f3fd4f",
+      "password_hash": "pbkdf2:798eb06d8535c569c434e21629f67007:f52767377fee8efc77fbefa1ed8e14ed2875056d8e8b2b4bc3acc9fa8465a40e",
       "credit_cents": 0,
       "created_at": "2026-11-11T15:03:07.158Z"
     }

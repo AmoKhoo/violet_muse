@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { NextResponse } from 'next/server';
 import { getDb, saveDb, nextId, nowIso } from '@/lib/db';
 import { userFromRequest } from '@/lib/auth';
@@ -5,7 +6,7 @@ import { checkout } from '@/lib/payments';
 import { grantCredit, planAnnualPrice } from '@/lib/money';
 export const dynamic = 'force-dynamic';
 export async function POST(req: Request) {
-  const user = userFromRequest(req);
+  const user = await userFromRequest(req);
   if (!user) return NextResponse.json({ error: 'login_required' }, { status: 401 });
   const { plan_id, billing } = await req.json();
   const db: any = getDb();

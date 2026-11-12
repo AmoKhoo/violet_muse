@@ -1,9 +1,10 @@
+export const runtime = 'edge';
 import { NextResponse } from 'next/server';
 import { getDb, saveDb, nextId, nowIso } from '@/lib/db';
 import { requireAdmin } from '@/lib/admin';
 export const dynamic = 'force-dynamic';
 export async function POST(req: Request) {
-  const chk: any = requireAdmin(req);
+  const chk: any = await requireAdmin(req);
   if (chk.error) return NextResponse.json({ error: chk.error }, { status: chk.status });
   const db: any = getDb();
   const b = await req.json();

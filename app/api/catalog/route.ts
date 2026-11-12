@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { NextResponse } from 'next/server';
 import { getDb, loc } from '@/lib/db';
 import { planValue, planAnnualPrice } from '@/lib/money';

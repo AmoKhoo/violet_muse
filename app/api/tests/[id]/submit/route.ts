@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { NextResponse } from 'next/server';
 import { getDb, saveDb, nextId, nowIso } from '@/lib/db';
 import { userFromRequest } from '@/lib/auth';
@@ -9,11 +10,12 @@ export const dynamic = 'force-dynamic';
 // Submit test answers. Payment: free, or paid from credit (tests are NOT in
 // any plan). Report: answers JSON + the test's answer key + AI prompt.
 // The result is org-visible ONLY when taken under an org assignment.
-export async function POST(req: Request, { params }: { params: { id: string } }) {
-  const user = userFromRequest(req);
+export async function POST(req: Request, { params }: { params: Promise<{ id: string }> }) {
+  const { id: paramId } = await params;
+  const user = await userFromRequest(req);
   if (!user) return NextResponse.json({ error: 'login_required' }, { status: 401 });
   const db: any = getDb();
-  const test = db.tests.find((t: any) => t.id === Number(params.id) && t.published);
+  const test = db.tests.find((t: any) => t.id === Number(paramId) && t.published);
   if (!test) return NextResponse.json({ error: 'not_found' }, { status: 404 });
   const body = await req.json();
   const answers = body.answers;

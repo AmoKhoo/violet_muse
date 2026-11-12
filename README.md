@@ -37,27 +37,53 @@ Admin delete really deletes: the public site and the admin panel read the **same
 database**, so deleting a test or a content item in admin removes it from the
 public catalog immediately.
 
-## Check it live (no desktop needed) — deploy on Vercel
+## Check it live (no desktop needed) — deploy on Cloudflare Pages
 
-The repo is a standard Next.js app, so the fastest way to check the live
-site independently from Muse is Vercel (free tier is enough to look around):
+The repo is ready for Cloudflare Pages (free tier is enough to look
+around). The build uses `@cloudflare/next-on-pages`, so API routes keep
+working — this is **not** a static export.
 
-1. Open https://vercel.com/new and **Import** `AmoKhoo/violet_muse`.
-2. Framework preset: **Next.js** (detected automatically). No build command
-   to change — `next build` is the default.
-3. Environment variables: none required to look around. Optionally set
+**English:**
+1. Open https://dash.cloudflare.com → **Workers & Pages** → **Create** →
+   **Pages** → **Connect to Git**.
+2. Select the `AmoKhoo/violet_muse` repository.
+3. Framework preset: **Next.js**. Set the build command to
+   `npm run pages:build` and the build output directory to
+   `.vercel/output/static` (the adapter's output).
+4. Environment variables: none required to look around. Optionally set
    `OPENAI_API_KEY`, `STRIPE_SECRET_KEY` / `STRIPE_PUBLISHABLE_KEY`,
    Google credentials and `SESSION_SECRET` (see `.env.example`).
-4. Click **Deploy**. Vercel gives you a live URL like
-   `violet-muse.vercel.app` — open it, switch EN / FR / AR, log in with a
+5. Click **Save and Deploy**. Cloudflare gives you a live URL like
+   `violet-muse.pages.dev` — open it, switch EN / FR / AR, log in with a
    demo account below, and try the tests, booking and admin panel.
 
-Note: on Vercel the JSON database lives in `/tmp` and does **not** persist
-between deployments — fine for checking the site, not for production data.
-For durable production data set `DATABASE_URL` (Postgres, e.g. Vercel
-Postgres / Neon) — see `docs/ARCHITECTURE.md`. To make the site public
-under your own domain, add the domain in Vercel → Project Settings →
-Domains.
+**فارسی:**
+۱. به https://dash.cloudflare.com برو → **Workers & Pages** → **Create** →
+   **Pages** → **Connect to Git**.
+۲. مخزن `AmoKhoo/violet_muse` را انتخاب کن.
+۳. Framework preset را **Next.js** بگذار، دستور ساخت را
+   `npm run pages:build` و پوشه خروجی ساخت را
+   `.vercel/output/static` بگذار.
+۴. متغیر محیطی برای دیدن سایت لازم نیست. اگر خواستی `OPENAI_API_KEY`،
+   کلیدهای Stripe، اطلاعات گوگل و `SESSION_SECRET` را بگذار
+   (در `.env.example` هست).
+۵. **Save and Deploy** را بزن. آدرسی مثل `violet-muse.pages.dev`
+   می‌گیری؛ بازش کن، زبان را عوض کن، با یک حساب نمایشی زیر وارد شو و
+   آزمون، رزرو و پنل مدیر را امتحان کن.
+
+Note: on Cloudflare Pages there is **no persistent filesystem**, so the
+JSON database lives in memory only and does **not** persist between
+deployments or new isolates — fine for checking the site, not for
+production data. Admin changes (add/delete) work while the site is
+running, but they reset on the next deploy. For durable production data
+set `DATABASE_URL` (Postgres, e.g. Neon / Supabase) — see
+`docs/ARCHITECTURE.md`. To make the site public under your own domain,
+add the domain in Cloudflare → Pages → your project → Custom domains.
+
+Alternative: the app is also a standard Next.js app, so it still deploys
+on Vercel (`vercel.com/new`, Import `AmoKhoo/violet_muse`, Deploy) or any
+Node host (`npm run build && npm start`). On Vercel the JSON database
+lives in `/tmp` and likewise does not persist.
 
 ## Run it locally
 
@@ -153,7 +179,7 @@ docs/
    store, and real counselor photos.
 3. **Keys** — `OPENAI_API_KEY` for live AI reports, Stripe keys for real
    payments, Google credentials for real Meet links.
-4. **Domain + hosting** — run `npm run dev` locally to test; for the public
-   site deploy this app (any Node host) and point your domain at it.
+4. **Domain + hosting** — deploy this app on Cloudflare Pages (see above)
+   and point your domain at it (Pages → Custom domains).
 5. **Legal pages** — privacy policy, terms, and the "not a diagnosis" notice
    (the notice is already in every report; the pages are stubs in the footer).

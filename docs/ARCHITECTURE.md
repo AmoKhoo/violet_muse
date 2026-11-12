@@ -7,19 +7,26 @@ scale, and the modules can be split later if one of them outgrows the rest.
 
 ## Stack
 
-- Next.js 14 + React 18 + TypeScript. `next dev` / `next build` / `next start`.
+- Next.js 15 + React 19 + TypeScript. `next dev` / `next build` / `next start`.
+  Cloudflare Pages build: `npm run pages:build` (`@cloudflare/next-on-pages`
+  1.13; build output `.vercel/output/static`). All API routes and dynamic
+  pages run on the Edge Runtime (`export const runtime = 'edge'`), so the
+  code uses Web Crypto only — no `node:crypto` / `node:fs` imports.
 - Styling: `app/globals.css` + `src/lib/theme.ts` (soft violet #8B7BC7 /
   #A78BFA, deep plum #4C3A7A, warm cream #FBF8F5, muted teal #6FA8A0).
   System fonts only — no external requests, so the first paint never blocks.
 - Data: `src/lib/db.ts` — one JSON file (`data/violet.json`, seeded from
-  `src/seed-data.json`). Public site, all four panels and admin read/write
-  the same DB, so an admin delete removes the item from the public catalog.
-  On Vercel the filesystem is ephemeral (`/tmp/violet-data`): fine for
-  checking the site, not for durable production data. For production, set
-  `DATABASE_URL` (Postgres — Vercel Postgres / Neon) and swap the adapter in
-  `src/lib/db.ts`; the route code does not need to change.
-- Auth: `src/lib/auth.ts` — scrypt password hashing, stateless signed tokens
-  (30 days), roles member / leader / counselor / admin.
+  `src/seed-data.json`) when a real filesystem exists (local / Node host).
+  Public site, all four panels and admin read/write the same DB, so an
+  admin delete removes the item from the public catalog. On Cloudflare
+  Pages / Vercel there is no persistent filesystem: the DB lives in memory
+  only and resets on redeploy / new isolate — fine for checking the site,
+  not for durable production data. For production, set `DATABASE_URL`
+  (Postgres — Neon / Supabase) and swap the adapter in `src/lib/db.ts`;
+  the route code does not need to change.
+- Auth: `src/lib/auth.ts` — PBKDF2-SHA256 password hashing (Web Crypto,
+  100k iterations; stored as `pbkdf2:<salt>:<hash>`), stateless HMAC-signed
+  tokens (30 days), roles member / leader / counselor / admin.
 - i18n: `src/lib/i18n.ts` — EN / FR / AR strings; Arabic sets `dir="rtl"`.
   Content titles/descriptions are stored as `{en, fr, ar}` JSON.
 
@@ -66,4 +73,4 @@ scale, and the modules can be split later if one of them outgrows the rest.
 3. Keys: `OPENAI_API_KEY`, Stripe keys, Google credentials (see `.env.example`).
 4. `DATABASE_URL` for durable data; change `SESSION_SECRET` and
    `DEMO_PASSWORD`; delete demo accounts/org from the admin panel.
-5. Deploy on Vercel (see README) and point your domain at it.
+5. Deploy on Cloudflare Pages (see README) and point your domain at it.

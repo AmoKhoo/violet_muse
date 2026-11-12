@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { NextResponse } from 'next/server';
 import { getDb, saveDb, nextId, nowIso } from '@/lib/db';
 import { userFromRequest } from '@/lib/auth';
@@ -12,7 +13,7 @@ export async function POST(req: Request) {
   const body = await req.json();
   const { kind, item_id, email, pay_with } = body;
   const db: any = getDb();
-  const user = userFromRequest(req);
+  const user = await userFromRequest(req);
   if (!user && !email) return NextResponse.json({ error: 'email_required' }, { status: 400 });
   const item = kind === 'test'
     ? db.tests.find((t: any) => t.id === Number(item_id) && t.published)
