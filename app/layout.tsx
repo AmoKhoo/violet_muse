@@ -1,7 +1,24 @@
 import type { Metadata } from 'next';
+import { Newsreader, Noto_Naskh_Arabic } from 'next/font/google';
 import './globals.css';
 import { Providers } from '@/lib/providers';
 import Nav from '@/components/Nav';
+import EmergencyButton from '@/components/EmergencyButton';
+
+// Preview-faithful typography (2026-11-12): Newsreader serif for display
+// type, Noto Naskh Arabic for Arabic — self-hosted at build time via
+// next/font/google, so no runtime Google Fonts request is needed.
+const displayFont = Newsreader({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-display',
+});
+const arabicFont = Noto_Naskh_Arabic({
+  subsets: ['arabic'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-arabic',
+});
 
 export const metadata: Metadata = {
   title: 'Violet — Online Psychology',
@@ -11,11 +28,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" dir="ltr">
+    <html lang="en" dir="ltr" className={`${displayFont.variable} ${arabicFont.variable}`}>
       <body>
         <Providers>
           <Nav />
           <main>{children}</main>
+          <EmergencyButton />
           <footer className="footer">
             <div className="container">
               <strong>Violet</strong> — online psychology in English, French and Arabic.

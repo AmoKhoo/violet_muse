@@ -34,6 +34,7 @@ export default function PlansPage() {
           <p><span className="price plan-price">${(price / 100).toFixed(0)}</span>{annual ? ' / year' : ' / month'}</p>
           {annual && <p className="muted">You save ${((p.price_cents * 12 * 0.15) / 100).toFixed(0)} vs monthly — 15% off the 12-month total, paid at once.</p>}
           <p>{p.sessions} × 45-min sessions + ${(p.credit_cents / 100).toFixed(0)} credit</p>
+          <p>{p.emergency_calls_per_month > 0 ? `${p.emergency_calls_per_month} ${t(lang, 'emergencyPerMonth')}` : t(lang, 'emergencyNotIncluded')}</p>
           <p className="muted">Unlimited messaging{p.workshops ? ' · Workshops' : ''}{p.priority ? ' · Priority booking' : ''}{p.org_seat ? ' · 1 org seat' : ''}</p>
           <p className="muted">Value of sessions + credit: ${(p.value.total_value_cents / 100).toFixed(0)} — cheaper than buying singly.</p>
           <button className="btn" onClick={() => subscribe(p.id)}>Subscribe</button>

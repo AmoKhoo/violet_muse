@@ -45,7 +45,7 @@ export default function Home() {
         <div className="container hero-ed-grid">
           <div className="hero-ed-copy">
             <p className="hero-eyebrow">{t(lang, 'heroEyebrow')}</p>
-            <h1>{t(lang, 'heroTitle')}</h1>
+            <h1>{t(lang, 'heroTitleMain')} <span className="hero-title-accent">{t(lang, 'heroTitleAccent')}</span></h1>
             <p className="hero-sub">{t(lang, 'heroSub')}</p>
             <div className="hero-actions">
               <Link href="/tests" className="btn">{t(lang, 'takeTest')}</Link>
@@ -56,6 +56,30 @@ export default function Home() {
           </div>
           <div className="hero-arch">
             <img src={HERO_IMAGE} alt="" />
+            {/* Floating cards — the preview hero's two details, now real:
+                the Emotional Intelligence test (id 2, free) and the first
+                counselor (Dr. Layla Haddad). They overlap the arch's edges
+                and link to the real test / counselor pages. */}
+            {cat && cat.tests?.length > 0 && cat.counselors?.length > 0 && (() => {
+              const ei = cat.tests.find((x: any) => x.id === 2) || cat.tests.find((x: any) => x.price_cents === 0) || cat.tests[0];
+              const c0 = cat.counselors[0];
+              return (<>
+                <Link href={`/tests/${ei.id}`} className="hero-float-card hero-float-report">
+                  <span className="hero-float-eyebrow">{t(lang, 'heroCardReport')}</span>
+                  <strong className="hero-float-title">{ei.title}</strong>
+                  <span className="muted">{priceLabel(ei.price_cents)} · {ei.question_count} questions</span>
+                  <span className="hero-segments" aria-hidden="true"><i className="on" /><i className="on" /><i className="on teal" /><i /></span>
+                </Link>
+                <div className="hero-float-card hero-float-counselor">
+                  <Avatar name={c0.name} />
+                  <div className="hero-float-c-body">
+                    <strong className="hero-float-title">{c0.name}</strong>
+                    <span className="muted">{c0.specialty} · ★ {c0.rating}</span>
+                  </div>
+                  <Link href={`/counselors/${c0.id}`} className="hero-float-book">{t(lang, 'bookShort')}</Link>
+                </div>
+              </>);
+            })()}
           </div>
         </div>
       </section>
@@ -111,6 +135,7 @@ export default function Home() {
             <div className="card-body"><h3>{p.name}</h3>
               <p><span className="price plan-price">${(p.price_cents / 100).toFixed(0)}/mo</span></p>
               <p>{p.sessions} × 45-min sessions + ${(p.credit_cents / 100).toFixed(0)} credit · unlimited messaging</p>
+              <p>{p.emergency_calls_per_month > 0 ? `${p.emergency_calls_per_month} ${t(lang, 'emergencyPerMonth')}` : t(lang, 'emergencyNotIncluded')}</p>
               <p className="muted">No tests included — tests are free or paid from credit.</p></div></div>
         ))}</div>
       </div></section>)}

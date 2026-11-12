@@ -11,6 +11,7 @@ export default function PanelPage() {
   const [tab, setTab] = useState('overview');
   const [orgPanel, setOrgPanel] = useState<any>(null);
   const [cPanel, setCPanel] = useState<any>(null);
+  const [emg, setEmg] = useState<any>(null);
   const [msg, setMsg] = useState('');
   const [orgName, setOrgName] = useState('');
   const [member, setMember] = useState({ name: '', email: '', password: '' });
@@ -20,6 +21,7 @@ export default function PanelPage() {
   function load() {
     api('/api/account').then(setAcc).catch(() => {});
     api('/api/counselor/panel').then(setCPanel).catch(() => {});
+    api('/api/emergency').then(setEmg).catch(() => {});
   }
   useEffect(load, []);
   useEffect(() => {
@@ -43,6 +45,13 @@ export default function PanelPage() {
   async function saveBio() {
     try { await api('/api/counselor/bio', { method: 'POST', body: JSON.stringify({ bio }) }); setMsg('Bio submitted — it goes live only after admin approval.'); } catch (e: any) { setMsg(e.message); }
   }
+  async function toggleEmergency() {
+    try {
+      const r = await api('/api/emergency/availability', { method: 'POST', body: JSON.stringify({ online: !(emg?.online) }) });
+      setEmg((e: any) => (e ? { ...e, online: r.online } : e));
+      load();
+    } catch (e: any) { setMsg(e.message); }
+  }
   return (<div className="section"><div className="container">
     <h1>{t(lang, 'myPanel')} — {user.name} <span className="badge">{user.role}</span></h1>
     {user.role === 'admin' && <p><Link href="/admin" className="btn">Open the admin console →</Link></p>}
@@ -51,6 +60,7 @@ export default function PanelPage() {
     {!acc && <p>{t(lang, 'loading')}</p>}
     {acc && tab === 'overview' && (<div className="grid">
       <div className="card"><h3>Plan</h3>{acc.subscription ? (<p>{acc.subscription.plan?.name} · {acc.subscription.sessions_left} {t(lang, 'sessionsLeft')} · billing: {acc.subscription.billing}</p>) : <p>No plan yet. <Link href="/plans">Choose a plan</Link></p>}</div>
+      <div className="card"><h3>{t(lang, 'emergencyNow')}</h3>{emg && emg.allowance !== undefined ? (<p>{emg.remaining} / {emg.allowance} {t(lang, 'emergencyRemaining')}{emg.allowance <= 0 && <> · <Link href="/plans">{t(lang, 'emergencyUpgrade')}</Link></>}</p>) : <p className="muted">—</p>}</div>
       <div className="card"><h3>{t(lang, 'credit')}</h3><p>${(acc.credit_cents / 100).toFixed(2)} (rolls 60 days)</p></div>
       <div className="card"><h3>Library</h3><p>{acc.library.length} items · {acc.test_results.length} test results · {acc.bookings.length} bookings</p></div>
       <div className="card"><h3>Spaces</h3><p>Personal space + {acc.my_orgs.length} org space(s): {acc.my_orgs.map((o: any) => o.name).join(', ') || '—'}</p><p className="muted">Personal results are never visible to a leader — only results of tests assigned inside an org.</p></div>
@@ -63,7 +73,13 @@ export default function PanelPage() {
       <div className="card" key={b.id} style={{ marginBottom: 12 }}><strong>{b.counselor_name}</strong> · {new Date(b.starts_at).toLocaleString()} · {b.status}
       <br /><a href={b.meet_url} target="_blank" rel="noreferrer">Meet link ({b.meet_status})</a>
       {b.status === 'booked' && <> · <button className="btn secondary" onClick={() => cancelBooking(b.id)}>Cancel (free up to 24h before)</button></>}</div>
-    ))}{acc.bookings.length === 0 && <p className="muted">No bookings yet.</p>}</div>)}
+    ))}{acc.bookings.length === 0 && <p className="muted">No bookings yet.</p>}
+    <h3>{t(lang, 'emergencyHistory')}</h3>
+    {(emg?.history || []).map((c: any) => (
+      <div className="card" key={c.id} style={{ marginBottom: 12 }}><strong>{c.counselor_name}</strong> · {new Date(c.starts_at).toLocaleString()} · {c.status}
+      <br /><a href={c.meet_url} target="_blank" rel="noreferrer">Meet link ({c.meet_status})</a></div>
+    ))}
+    {emg && (emg.history || []).length === 0 && <p className="muted">No emergency sessions yet.</p>}</div>)}
     {acc && tab === 'results' && (<div>{acc.test_results.map((r: any) => (
       <div className="card" key={r.id} style={{ marginBottom: 12 }}><strong>{r.headline}</strong><p style={{ whiteSpace: 'pre-wrap' }}>{r.report}</p><p className="muted">Source: {r.report_source} · {r.org_id ? 'Taken under an org assignment (visible to that leader)' : 'Personal — not visible to any leader'}</p></div>
     ))}{acc.test_results.length === 0 && <p className="muted">No test results yet.</p>}</div>)}
@@ -90,6 +106,15 @@ export default function PanelPage() {
     </div>)}
     {tab === 'counselor' && cPanel && (<div>
       <h2>Counselor panel — {cPanel.profile.name}</h2>
+      <h3>{t(lang, 'emergencyIncoming')}</h3>
+      <p><span className={`badge${emg?.online ? ' teal' : ''}`}>{emg?.online ? t(lang, 'emergencyOnline') : t(lang, 'emergencyGoOnline')}</span>{' '}
+        <button className="btn secondary" onClick={toggleEmergency}>{emg?.online ? t(lang, 'emergencyGoOffline') : t(lang, 'emergencyGoOnline')}</button></p>
+      {(emg?.incoming || []).map((c: any) => (
+        <div className="card" key={c.id} style={{ marginBottom: 8 }}><strong>{c.user_name}</strong> · {new Date(c.starts_at).toLocaleString()} · {c.status}
+        <br /><a href={c.meet_url} target="_blank" rel="noreferrer">Meet link ({c.meet_status})</a>
+        <br /><span className="muted">{t(lang, 'emergencyStartsIn')}</span></div>
+      ))}
+      {emg && (emg.incoming || []).length === 0 && <p className="muted">No incoming emergency requests.</p>}
       <h3>Upcoming sessions</h3>
       {cPanel.bookings.map((b: any) => <p key={b.id}>{b.patient_name} · {new Date(b.starts_at).toLocaleString()} · {b.status} · <a href={b.meet_url} target="_blank" rel="noreferrer">Meet</a></p>)}
       <h3>Patients & private notes (only you see these)</h3>
